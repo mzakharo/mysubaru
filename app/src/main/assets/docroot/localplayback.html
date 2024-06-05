@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+<title>UIE Audio Library Sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { margin: 10px; padding: 0; color: #4D4B43; font-family: Helvetica, Arial, sans-serif; font-size: 12pt;}
+h1,h2 { color: #33322C; font-weight: normal; }
+h1 { font-weight: normal; background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14pt; }
+h2 { font-size: 12pt; }
+p { font-size: 10pt; }
+textarea.code { border: 1px #666666 solid; width: 300px; height: 80px; resize: none; }
+input.run { display: block; border: 1px #cccccc solid; box-shadow: 1px 1px 1px #666; margin-top: 2px; }
+input.run:hover { cursor: pointer; }
+</style>
+<script type="text/javascript" src="js/localplayback.js"></script>
+<script type="text/javascript" src="js/microserver.js"></script>
+<script type="text/javascript">
+  function run(code_id) {
+    var node = document.getElementById(code_id);
+    eval(node.value);
+  }
+</script>
+</head>
+<body>
+<h1>UIE Local Playback Library</h1>
+<p>This Java Script library provides bridge to the native UIE Local Playback Library on the handset device.</p>
+<p>Latest version: 2.0.0</p>
+
+<div>
+<h2>getSongMetadata</h2>
+<textarea id="getSongMetadata" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.getSongMetadata(function(xml) {
+  alert(xml);
+}, UIELocalPlayback.METADATA_CURRENT);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getSongMetadata')"/>
+</div>
+
+<div>
+<h2>setPlaybackMode</h2>
+<textarea id="setPlaybackMode" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.setPlaybackMode(function(xml) {
+  alert(xml);
+}, UIELocalPlayback.REPEAT_ALL, UIELocalPlayback.SHUFFLE_ON);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('setPlaybackMode')"/>
+</div>
+
+<div>
+<h2>getPlaybackStatus</h2>
+<textarea id="getPlaybackStatus" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.getPlaybackStatus(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getPlaybackStatus')"/>
+</div>
+
+
+<div>
+<h2>play</h2>
+<textarea id="play" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.play(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('play')"/>
+</div>
+
+<div>
+<h2>pause</h2>
+<textarea id="pause" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.pause(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('pause')"/>
+</div>
+
+<div>
+<h2>stop</h2>
+<textarea id="stop" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.stop(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('stop')"/>
+</div>
+
+<div>
+<h2>skip</h2>
+<textarea id="skip" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.skip(function(xml) {
+  alert(xml);
+}, UIELocalPlayback.SKIP_TO_NEXT_TRACK);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('skip')"/>
+</div>
+
+<div>
+<h2>setPosition</h2>
+<textarea id="setPosition" class="code" >
+var sec = 10;
+var player = UIELocalPlayback.getInstance();
+player.setPosition(function(xml) {
+  alert(xml);
+}, sec);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('setPosition')"/>
+</div>
+
+<div>
+<h2>getPlaylist</h2>
+<textarea id="getPlaylist" class="code" >
+var count = 10;
+var offset = 0;
+var player = UIELocalPlayback.getInstance();
+player.getPlaylist(function(xml) {
+  alert(xml);
+}, count, offset);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getPlaylist')"/>
+</div>
+
+<div>
+<h2>getGenres</h2>
+<textarea id="getGenres" class="code" >
+var count = 10;
+var offset = 0;
+var player = UIELocalPlayback.getInstance();
+player.getGenres(function(xml) {
+  alert(xml);
+}, count, offset);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getGenres')"/>
+</div>
+
+<div>
+<h2>getArtists</h2>
+<textarea id="getArtists" class="code" >
+var count = 10;
+var offset = 0;
+var player = UIELocalPlayback.getInstance();
+player.getArtists(function(xml) {
+  alert(xml);
+}, count, offset);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getArtists')"/>
+</div>
+
+<div>
+<h2>getAlbums</h2>
+<textarea id="getAlbums" class="code" >
+var count = 10;
+var offset = 0;
+var player = UIELocalPlayback.getInstance();
+player.getAlbums(function(xml) {
+  alert(xml);
+}, count, offset);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getAlbums')"/>
+</div>
+
+<div>
+<h2>getMusicTracks</h2>
+<textarea id="getMusicTracks" class="code" >
+var count = 10;
+var offset = 0;
+var player = UIELocalPlayback.getInstance();
+player.getMusicTracks(function(xml) {
+  alert(xml);
+}, count, offset);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getMusicTracks')"/>
+</div>
+
+<div>
+<h2>getAlbumArtwork</h2>
+<textarea id="getAlbumArtwork" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.getSongMetadata(function(xml) {
+  var re = new RegExp("<AlbumID>([0-9]+)</AlbumID>");
+  if(re.test(xml)) {
+    var album_id = RegExp.$1;
+    var width = 128;
+    var height = 128;
+    player.getAlbumArtwork(function(base64_png) {
+      var image = document.getElementById('artwork');
+      image.src = "data:image/png;base64," + base64_png;
+    }, album_id, width, height);
+  }
+}, UIELocalPlayback.METADATA_CURRENT);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getAlbumArtwork')"/>
+<img id="artwork" src="" alt="artwork_image"/>
+</div>
+
+<div>
+<h2>enableFilter</h2>
+<textarea id="enableFilter" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.enableFilter(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('enableFilter')"/>
+</div>
+
+<div>
+<h2>disableFilter</h2>
+<textarea id="disableFilter" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.disableFilter(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('disableFilter')"/>
+</div>
+
+<div>
+<h2>ioctlFilter</h2>
+<textarea id="ioctlFilter" class="code" >
+var player = UIELocalPlayback.getInstance();
+player.ioctlFilter(function(xml) {
+  alert(xml);
+}, 1, 1);
+</textarea>
+<input class="run" type="button" value="run" onclick="run('ioctlFilter')"/>
+</div>
+
+<p><a href="index.html">Go Back</a></p>
+
+<script type="text/javascript">
+    var is_headunit = false;
+    var player = UIELocalPlayback.getInstance();
+    if (is_headunit) {
+        player.useXHR("192.168.1.1", 80);
+    } else {
+        // Obtain a port number local server listen on.
+        var microserver = UIEMicroserver.getInstance();
+        microserver.getLocalServerPort(function(port) {
+           player.useXHR("127.0.0.1", port);
+        });
+    }
+</script>
+
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+</html>

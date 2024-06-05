@@ -1,0 +1,16 @@
+{
+  "countrys" : [
+    {
+      "name": "North America",
+      "codes": ["US","MX","CA"]
+    },
+    {
+      "name" : "Europe",
+      "codes":["EU"]
+    },
+    {
+      "name" : "Oceania",
+      "codes":["AU"]
+    }
+  ]
+}

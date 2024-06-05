@@ -1,0 +1,40 @@
+﻿CACHE MANIFEST
+# 20201125-1157
+CACHE:
+
+#HTML
+./huupd_list.html
+./huupd_settings.html
+./index.html
+./locationselect.html
+./terms_en.html
+./terms_ja.html
+
+#CSS
+https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css
+./css/harman_ota_ui.css
+
+#IMAGE
+./images/huupd_list_icon_a.png
+./images/huupd_list_icon_b.png
+./images/huupd_list_icon_c.png
+
+#JS
+https://code.jquery.com/jquery-1.12.4.min.js
+https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js
+./js/aha_connect_sdk.js
+./js/config.js
+./js/harman_ota_common.js
+./js/harman_ota_controller.js
+./js/harman_ota_sdk.js
+./js/harman_ota_ui.js
+./js/smt.common.js
+./js/smt.word.js
+
+#JS COMMON
+../common/js/microserver.js
+../common/js/mwsRequestManager-1.0.2.js
+
+# Resources that require the user to be online.
+NETWORK:
+*

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="centerColor" format="color">
+    </attr>
+     <attr name="haloColor" format="color">
+    </attr>
+    <attr name="mainColor" format="reference|color">
+    </attr>
+    <attr name="maxRadius" format="dimension">
+    </attr>
+    <attr name="measureWithLargestChild" format="boolean">
+    </attr>
+    <attr name="minRadius" format="dimension">
+    </attr>
+     <attr name="statusBarBackground" format="reference|color">
+    </attr>
+    <attr name="state_initializing_tts" format="boolean">
+    </attr>
+    <attr name="circleCenterX" format="dimension">
+    </attr>
+    <attr name="circleCenterY" format="dimension">
+    </attr>
+
+     <attr name="state_listening" format="boolean">
+    </attr>
+    <attr name="state_speaking" format="boolean">
+    </attr>
+    <attr name="state_waiting" format="boolean">
+    </attr>
+    <attr name="imageButtonStyle" format="reference">
+    </attr>
+    <attr name="background" format="reference">
+    </attr>
+    <attr name="backgroundSplit" format="reference|color">
+    </attr>
+     <attr name="backgroundStacked" format="reference|color">
+    </attr>
+     <attr name="contentInsetEnd" format="dimension">
+    </attr>
+    <attr name="expandActivityOverflowButtonDrawable" format="reference">
+    </attr>
+
+</resources>

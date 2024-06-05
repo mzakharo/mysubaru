@@ -1,0 +1,17 @@
+{"mmConfig": {
+  "MemTreeSize": 100,
+  "PositionCompConfig": {
+     "UsePositionCompensation": false
+   },
+  "modes": {
+    "vehicle": {
+      "MinDistBetweenSearches": 40,
+      "MaxSegSearchDist": 55
+    },
+    "pedestrian": {
+      "MaxSegSearchDist": 25,
+      "MinDistBetweenSearches": 12
+    }
+  },
+  "RoughMode": false
+}}

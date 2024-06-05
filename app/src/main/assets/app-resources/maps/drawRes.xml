@@ -1,0 +1,312 @@
+<drawres file="draw_res.bin">
+  <POIAlertMapping>
+    <!-- if the alert="UNKNOWN" then we expect to encounter this in the map but make no active use of it -->
+    <Mapping alert="RED_LIGHT"            id="MOBILE_RED_LIGHT_SC" />
+    <Mapping alert="RED_LIGHT"            id="RED_LIGHT_SC" />
+    <Mapping alert="RED_LIGHT_AND_SPEED"  id="FIXED_RED_LIGHT_SC" />
+    <Mapping alert="SPEED_FIXED"          id="SPEED_CAMERAS_CAT" />
+    <Mapping alert="SPEED_FIXED"          id="FIXED_SC" />
+    <Mapping alert="SPEED_FIXED"          id="SPEED_SC_CAT" />
+    <Mapping alert="SPEED_FIXED"          id="SPEED_SC" />
+    <Mapping alert="SPEED_MOBILE"         id="MOBILE_SC" />
+    <Mapping alert="SPEED_MOBILE"         id="SEMI_MOBILE_SC" />
+    <Mapping alert="SPEED_MOBILE"         id="SPEED_TRAP" />
+    <Mapping alert="SPEED_CHECK"          id="CHECK_SPEED_SC_CAT" />
+    <Mapping alert="SPEED_CHECK"          id="CHECK_SPEED_SC" />
+    <Mapping alert="SPEED_AVERAGE"        id="FIXED_AVERAGE_SC" />
+    <Mapping alert="SPEED_AVERAGE"        id="MOBILE_AVERAGE_SC" />
+    <Mapping alert="SPEED_AVERAGE"        id="SECTION_START_SC_CAT" entryExit="entry" />
+    <Mapping alert="SPEED_AVERAGE"        id="SECTION_END_SC_CAT" entryExit="exit" />
+    <Mapping alert="RAILROAD_CROSSING"    id="RAILWAY_SC_CAT" />
+    <Mapping alert="RAILROAD_CROSSING"    id="RAILWAY_SC" />
+    <Mapping alert="ACCIDENT_BLACKSPOT"   id="BLACK_SPOT_SC" />
+    <Mapping alert="ACCIDENT_BLACKSPOT"   id="BLACK_SPOT_SC_CAT" />
+    <Mapping alert="ACCIDENT_BLACKSPOT"   id="DANGEROUS_CURVE_SC" />
+    <Mapping alert="SCHOOL_ZONE"          id="SCHOOL_ZONE_SC_CAT" />
+    <Mapping alert="SCHOOL_ZONE"          id="SCHOOL_ZONE_SC" />
+    <Mapping alert="SCHOOL_ZONE_POINT"    id="SCHOOL_POINT_SC_CAT" />
+    <Mapping alert="SCHOOL_ZONE_POINT"    id="SCHOOL_POINT_SC" />
+    <Mapping alert="UNKNOWN"              id="SECTION_START_SC" />
+    <Mapping alert="UNKNOWN"              id="SECTION_END_SC" />
+    <Mapping alert="UNKNOWN"              id="BUS_LANE_SC_CAT" />
+    <Mapping alert="UNKNOWN"              id="DISTANCE_SC_CAT" />
+    <Mapping alert="UNKNOWN"              id="DUI_CHECKPOINT_SC" />
+  </POIAlertMapping>
+  <EmergencySearchMapping>
+    <Mapping emergency="CAR_REPAIR"  id="AUTO_REPAIR" />
+    <Mapping emergency="POLICE"      id="POLICE_SERVICE" />
+    <Mapping emergency="HOSPITAL"    id="HOSPITAL" />
+  </EmergencySearchMapping>
+  <ShieldMapping>
+    <Shield type="US_INTERSTATE"            id="US_INTERSTATE_SHLD"                prefix="I" />
+    <Shield type="US_STATE"                 id="US_STATE_SHLD" />
+    <Shield type="US_FEDERAL"               id="US_FEDERAL_SHLD"                   prefix="US" />
+    <Shield type="EUROPE"                   id="EUROPE_SHLD" />
+    <Shield type="CANADA"                   id="CANADA_SHLD" />
+    <Shield type="AL_STATE"                 id="AL_STATE_SHLD"                     prefix="AL" />
+    <Shield type="AK_STATE"                 id="AK_STATE_SHLD"                     prefix="AK" />
+    <Shield type="AZ_STATE"                 id="AZ_STATE_SHLD"                     prefix="AZ" />
+    <Shield type="AR_STATE"                 id="AR_STATE_SHLD"                     prefix="AR" />
+    <Shield type="CA_STATE"                 id="CA_STATE_SHLD"                     prefix="CA" />
+    <Shield type="CO_STATE"                 id="CO_STATE_SHLD"                     prefix="CO" />
+    <Shield type="CT_STATE"                 id="CT_STATE_SHLD"                     prefix="CT" />
+    <Shield type="DE_STATE"                 id="DE_STATE_SHLD"                     prefix="DE" />
+    <Shield type="DC_STATE"                 id="DC_STATE_SHLD"                     prefix="DC" />
+    <Shield type="FL_STATE"                 id="FL_STATE_SHLD"                     prefix="FL" />
+    <Shield type="GA_STATE"                 id="GA_STATE_SHLD"                     prefix="GA" />
+    <Shield type="HI_STATE"                 id="HI_STATE_SHLD"                     prefix="HI" />
+    <Shield type="ID_STATE"                 id="ID_STATE_SHLD"                     prefix="ID" />
+    <Shield type="IL_STATE"                 id="IL_STATE_SHLD"                     prefix="IL" />
+    <Shield type="IN_STATE"                 id="IN_STATE_SHLD"                     prefix="IN" />
+    <Shield type="IA_STATE"                 id="IA_STATE_SHLD"                     prefix="IA" />
+    <Shield type="KS_STATE"                 id="KS_STATE_SHLD"                     prefix="KS" />
+    <Shield type="KY_STATE"                 id="KY_STATE_SHLD"                     prefix="KY" />
+    <Shield type="LA_STATE"                 id="LA_STATE_SHLD"                     prefix="LA" />
+    <Shield type="ME_STATE"                 id="ME_STATE_SHLD"                     prefix="ME" />
+    <Shield type="MD_STATE"                 id="MD_STATE_SHLD"                     prefix="MD" />
+    <Shield type="MA_STATE"                 id="MA_STATE_SHLD"                     prefix="MA" />
+    <Shield type="MI_STATE"                 id="MI_STATE_SHLD"                     prefix="MI" />
+    <Shield type="MN_STATE"                 id="MN_STATE_SHLD"                     prefix="MN" />
+    <Shield type="MS_STATE"                 id="MS_STATE_SHLD"                     prefix="MS" />
+    <Shield type="MO_STATE"                 id="MO_STATE_SHLD"                     prefix="MO" />
+    <Shield type="MT_STATE"                 id="MT_STATE_SHLD"                     prefix="MT" />
+    <Shield type="NE_STATE"                 id="NE_STATE_SHLD"                     prefix="NE" />
+    <Shield type="NV_STATE"                 id="NV_STATE_SHLD"                     prefix="NV" />
+    <Shield type="NH_STATE"                 id="NH_STATE_SHLD"                     prefix="NH" />
+    <Shield type="NJ_STATE"                 id="NJ_STATE_SHLD"                     prefix="NJ" />
+    <Shield type="NM_STATE"                 id="NM_STATE_SHLD"                     prefix="NM" />
+    <Shield type="NY_STATE"                 id="NY_STATE_SHLD"                     prefix="NY" />
+    <Shield type="NC_STATE"                 id="NC_STATE_SHLD"                     prefix="NC" />
+    <Shield type="ND_STATE"                 id="ND_STATE_SHLD"                     prefix="ND" />
+    <Shield type="OH_STATE"                 id="OH_STATE_SHLD"                     prefix="OH" />
+    <Shield type="OK_STATE"                 id="OK_STATE_SHLD"                     prefix="OK" />
+    <Shield type="OR_STATE"                 id="OR_STATE_SHLD"                     prefix="OR" />
+    <Shield type="PA_STATE"                 id="PA_STATE_SHLD"                     prefix="PA" />
+    <Shield type="PR_STATE"                 id="PR_STATE_SHLD"                     prefix="PR" />
+    <Shield type="RI_STATE"                 id="RI_STATE_SHLD"                     prefix="RI" />
+    <Shield type="SC_STATE"                 id="SC_STATE_SHLD"                     prefix="SC" />
+    <Shield type="SD_STATE"                 id="SD_STATE_SHLD"                     prefix="SD" />
+    <Shield type="TN_STATE"                 id="TN_STATE_SHLD"                     prefix="TN" />
+    <Shield type="TX_STATE"                 id="TX_STATE_SHLD"                     prefix="TX" />
+    <Shield type="UT_STATE"                 id="UT_STATE_SHLD"                     prefix="UT" />
+    <Shield type="VT_STATE"                 id="VT_STATE_SHLD"                     prefix="VT" />
+    <Shield type="VA_STATE"                 id="VA_STATE_SHLD"                     prefix="VA" />
+    <Shield type="WA_STATE"                 id="WA_STATE_SHLD"                     prefix="WA" />
+    <Shield type="WV_STATE"                 id="WV_STATE_SHLD"                     prefix="WV" />
+    <Shield type="WI_STATE"                 id="WI_STATE_SHLD"                     prefix="WI" />
+    <Shield type="WY_STATE"                 id="WY_STATE_SHLD"                     prefix="WY" />
+    <Shield type="GENERIC"                  id="GENERIC_SHLD" />
+    <Shield type="EU_AND_GENERAL"           id="EU_AND_GENERAL_SHIELD" />
+    <Shield type="EU_AND_SECONDARY"         id="EU_AND_SECONDARY_SHIELD" />
+    <Shield type="EU_AUT_INTERCOUNTRIES"    id="EU_AUT_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_AUT_MOTORWAY"          id="EU_AUT_MOTORWAY_SHIELD" />
+    <Shield type="EU_AUT_HIGHSPEED_ROAD"    id="EU_AUT_HIGHSPEED_ROAD_SHIELD" />
+    <Shield type="EU_AUT_ROAD"              id="EU_AUT_ROAD_SHIELD" />
+    <Shield type="EU_BEL_INTERCOUNTRIES"    id="EU_BEL_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_BEL_MOTORWAY"          id="EU_BEL_MOTORWAY_SHIELD" />
+    <Shield type="EU_BEL_REGIONAL_ROAD"     id="EU_BEL_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_BEL_INTERMEDIATE_ROAD" id="EU_BEL_INTERMEDIATE_ROAD_SHIELD" />
+    <Shield type="EU_CRT_INTERCOUNTRIES"    id="EU_CRT_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_CRT_MOTORWAY"          id="EU_CRT_MOTORWAY_SHIELD" />
+    <Shield type="EU_CRT_NATIONAL_ROAD"     id="EU_CRT_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_CRT_MAIN_ROAD"         id="EU_CRT_MAIN_ROAD_SHIELD" />
+    <Shield type="EU_CZE_INTERCOUNTRIES"    id="EU_CZE_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_CZE_MOTORWAY"          id="EU_CZE_MOTORWAY_SHIELD" />
+    <Shield type="EU_CZE_MAIN_ROAD1"        id="EU_CZE_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_CZE_MAIN_ROAD2"        id="EU_CZE_MAIN_ROAD2_SHIELD" />
+    <Shield type="EU_CZE_MAIN_ROAD3"        id="EU_CZE_MAIN_ROAD3_SHIELD" />
+    <Shield type="EU_DNK_INTERCOUNTRIES"    id="EU_DNK_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_DNK_GENERAL"           id="EU_DNK_GENERAL_SHIELD" />
+    <Shield type="EU_DNK_SECONDARY"         id="EU_DNK_SECONDARY_SHIELD" />
+    <Shield type="EU_GBR_MOTORWAY"          id="EU_GBR_MOTORWAY_SHIELD" />
+    <Shield type="EU_GBR_A_ROAD"            id="EU_GBR_A_ROAD_SHIELD" />
+    <Shield type="EU_GBR_B_ROAD"            id="EU_GBR_B_ROAD_SHIELD" />
+    <Shield type="EU_EST_INTERCOUNTRIES"    id="EU_EST_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_EST_MOTORWAY"          id="EU_EST_MOTORWAY_SHIELD" />
+    <Shield type="EU_EST_REGIONAL_ROAD"     id="EU_EST_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_EST_FEDERAL_ROAD"      id="EU_EST_FEDERAL_ROAD_SHIELD" />
+    <Shield type="EU_FIN_INTERCOUNTRIES"    id="EU_FIN_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_FIN_MAIN_ROAD1"        id="EU_FIN_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_FIN_MAIN_ROAD2"        id="EU_FIN_MAIN_ROAD2_SHIELD" />
+    <Shield type="EU_FIN_REGIONAL_ROAD"     id="EU_FIN_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_FIN_INTERMEDIATE_ROAD" id="EU_FIN_INTERMEDIATE_ROAD_SHIELD" />
+    <Shield type="EU_FRA_INTERCOUNTRIES"    id="EU_FRA_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_FRA_MOTORWAY"          id="EU_FRA_MOTORWAY_SHIELD" />
+    <Shield type="EU_FRA_NATIONAL_ROAD"     id="EU_FRA_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_FRA_DEPARTMENT_ROAD"   id="EU_FRA_DEPARTMENT_ROAD_SHIELD" />
+    <Shield type="EU_FRA_RURAL_ROAD"        id="EU_FRA_RURAL_ROAD_SHIELD" />
+    <Shield type="EU_FRA_ROAD"              id="EU_FRA_ROAD_SHIELD" />
+    <Shield type="EU_DEU_INTERCOUNTRIES"    id="EU_DEU_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_DEU_MOTORWAY"          id="EU_DEU_MOTORWAY_SHIELD" />
+    <Shield type="EU_DEU_FEDERAL_ROAD"      id="EU_DEU_FEDERAL_ROAD_SHIELD" />
+    <Shield type="EU_GRC_INTERCOUNTRIES"    id="EU_GRC_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_GRC_NATIONAL_ROAD"     id="EU_GRC_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_HUN_INTERCOUNTRIES"    id="EU_HUN_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_HUN_MOTORWAY"          id="EU_HUN_MOTORWAY_SHIELD" />
+    <Shield type="EU_HUN_COUNTRY_ROAD"      id="EU_HUN_COUNTRY_ROAD_SHIELD" />
+    <Shield type="EU_IRL_MOTORWAY"          id="EU_IRL_MOTORWAY_SHIELD" />
+    <Shield type="EU_IRL_NATIONAL_ROAD"     id="EU_IRL_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_IRL_REGIONAL_ROAD"     id="EU_IRL_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_ITA_INTERCOUNTRIES"    id="EU_ITA_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_ITA_MOTORWAY"          id="EU_ITA_MOTORWAY_SHIELD" />
+    <Shield type="EU_ITA_NATIONAL_ROAD"     id="EU_ITA_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_ITA_REGIONAL_ROAD"     id="EU_ITA_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_LTV_INTERCOUNTRIES"    id="EU_LTV_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_LTV_MOTORWAY"          id="EU_LTV_MOTORWAY_SHIELD" />
+    <Shield type="EU_LTV_MAIN_ROAD1"        id="EU_LTV_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_LCH_MOTORWAY"          id="EU_LCH_MOTORWAY_SHIELD" />
+    <Shield type="EU_LTH_INTERCOUNTRIES"    id="EU_LTH_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_LTH_MOTORWAY"          id="EU_LTH_MOTORWAY_SHIELD" />
+    <Shield type="EU_LTH_NATIONAL_ROAD"     id="EU_LTH_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_LTH_REGIONAL_ROAD"     id="EU_LTH_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_LUX_INTERCOUNTRIES"    id="EU_LUX_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_LUX_MOTORWAY"          id="EU_LUX_MOTORWAY_SHIELD" />
+    <Shield type="EU_LUX_NATIONAL_ROAD"     id="EU_LUX_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_LUX_ROAD"              id="EU_LUX_ROAD_SHIELD" />
+    <Shield type="EU_MON_NATIONAL_ROAD"     id="EU_MON_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_MON_REGIONAL_ROAD"     id="EU_MON_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_NIR_MOTORWAY"          id="EU_NIR_MOTORWAY_SHIELD" />
+    <Shield type="EU_NIR_A_ROAD"            id="EU_NIR_A_ROAD_SHIELD" />
+    <Shield type="EU_NIR_REGIONAL_ROAD"     id="EU_NIR_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_NOR_INTERCOUNTRIES"    id="EU_NOR_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_NOR_MOTORWAY"          id="EU_NOR_MOTORWAY_SHIELD" />
+    <Shield type="EU_POL_INTERCOUNTRIES"    id="EU_POL_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_POL_MOTORWAY"          id="EU_POL_MOTORWAY_SHIELD" />
+    <Shield type="EU_POL_EXPRESSWAY"        id="EU_POL_EXPRESSWAY_SHIELD" />
+    <Shield type="EU_POL_NATIONAL_ROAD"     id="EU_POL_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_POL_REGIONAL_ROAD"     id="EU_POL_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_PRT_INTERCOUNTRIES"    id="EU_PRT_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_PRT_MOTORWAY"          id="EU_PRT_MOTORWAY_SHIELD" />
+    <Shield type="EU_PRT_MAIN_ROAD"         id="EU_PRT_MAIN_ROAD_SHIELD" />
+    <Shield type="EU_PRT_EXTRA_ROAD"        id="EU_PRT_EXTRA_ROAD_SHIELD" />
+    <Shield type="EU_PRT_NATIONAL_STREET"   id="EU_PRT_NATIONAL_STREET_SHIELD" />
+    <Shield type="EU_PRT_MUNICIPAL_STREET"  id="EU_PRT_MUNICIPAL_STREET_SHIELD" />
+    <Shield type="EU_SCT_MOTORWAY"          id="EU_SCT_MOTORWAY_SHIELD" />
+    <Shield type="EU_SCT_A_ROAD"            id="EU_SCT_A_ROAD_SHIELD" />
+    <Shield type="EU_SCT_B_ROAD"            id="EU_SCT_B_ROAD_SHIELD" />
+    <Shield type="EU_SVK_INTERCOUNTRIES"    id="EU_SVK_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_SVK_MOTORWAY"          id="EU_SVK_MOTORWAY_SHIELD" />
+    <Shield type="EU_SVK_MAIN_ROAD1"        id="EU_SVK_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_SVK_MAIN_ROAD2"        id="EU_SVK_MAIN_ROAD2_SHIELD" />
+    <Shield type="EU_SVK_MAIN_ROAD3"        id="EU_SVK_MAIN_ROAD3_SHIELD" />
+    <Shield type="EU_SVN_INTERCOUNTRIES"    id="EU_SVN_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_SVN_MOTORWAY"          id="EU_SVN_MOTORWAY_SHIELD" />
+    <Shield type="EU_SVN_NATIONAL_ROAD"     id="EU_SVN_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_SVN_MAIN_ROAD"         id="EU_SVN_MAIN_ROAD_SHIELD" />
+    <Shield type="EU_SVN_REGIONAL_ROAD"     id="EU_SVN_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_ESP_INTERCOUNTRIES"    id="EU_ESP_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_ESP_MOTORWAY"          id="EU_ESP_MOTORWAY_SHIELD" />
+    <Shield type="EU_ESP_NATIONAL_ROAD"     id="EU_ESP_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_ESP_MAIN_ROAD1"        id="EU_ESP_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_ESP_MAIN_ROAD2"        id="EU_ESP_MAIN_ROAD2_SHIELD" />
+    <Shield type="EU_ESP_REGIONAL_ROAD"     id="EU_ESP_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_SWE_INTERCOUNTRIES"    id="EU_SWE_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_SWE_MOTORWAY"          id="EU_SWE_MOTORWAY_SHIELD" />
+    <Shield type="EU_SWE_NATIONAL_ROAD"     id="EU_SWE_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_CHE_INTERCOUNTRIES"    id="EU_CHE_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_CHE_MOTORWAY"          id="EU_CHE_MOTORWAY_SHIELD" />
+    <Shield type="EU_CHE_MAIN_ROAD1"        id="EU_CHE_MAIN_ROAD1_SHIELD" />
+    <Shield type="EU_VAT_NATIONAL_ROAD"     id="EU_VAT_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_VAT_REGIONAL_ROAD"     id="EU_VAT_REGIONAL_ROAD_SHIELD" />
+    <Shield type="EU_WLS_MOTORWAY"          id="EU_WLS_MOTORWAY_SHIELD" />
+    <Shield type="EU_WLS_A_ROAD"            id="EU_WLS_A_ROAD_SHIELD" />
+    <Shield type="EU_WLS_B_ROAD"            id="EU_WLS_B_ROAD_SHIELD" />
+    <Shield type="EU_NLD_INTERCOUNTRIES"    id="EU_NLD_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_NLD_MOTORWAY"          id="EU_NLD_MOTORWAY_SHIELD" />
+    <Shield type="EU_NLD_NATIONAL_ROAD"     id="EU_NLD_NATIONAL_ROAD_SHIELD" />
+    <Shield type="EU_NLD_ROAD"              id="EU_NLD_ROAD_SHIELD" />
+    <Shield type="EU_ISM_A_ROAD"            id="EU_ISM_A_ROAD_SHIELD" />
+    <Shield type="EU_ISM_B_ROAD"            id="EU_ISM_B_ROAD_SHIELD" />
+    <Shield type="EU_INTERCOUNTRIES"        id="EU_INTERCOUNTRIES_SHIELD" />
+    <Shield type="EU_RUS_FEDERAL"           id="EU_RUS_FEDERAL_SHIELD" />
+    <Shield type="EU_RUS_MOTORWAY"          id="EU_RUS_MOTORWAY_SHIELD" />
+    <Shield type="EU_RUS_REGIONAL"          id="EU_RUS_REGIONAL_SHIELD" />
+    <Shield type="EU_BGR_MOTORWAY"          id="EU_BGR_MOTORWAY_SHIELD" />
+    <Shield type="EU_BGR_NATIONAL"          id="EU_BGR_NATIONAL_SHIELD" />
+    <Shield type="EU_ROU_NATIONAL"          id="EU_ROU_NATIONAL_SHIELD" />
+    <Shield type="EU_ROU_COUNTRY"           id="EU_ROU_COUNTRY_SHIELD" />
+    <Shield type="EU_ROU_LOCAL"             id="EU_ROU_LOCAL_SHIELD" />
+    <Shield type="EU_TUR_MOTORWAY"          id="EU_TUR_MOTORWAY_SHIELD" />
+    <Shield type="EU_TUR_GOVERNMENTAL"      id="EU_TUR_GOVERNMENTAL_SHIELD" />
+    <Shield type="EU_TUR_PROVINCE"          id="EU_TUR_PROVINCE_SHIELD" />
+    <Shield type="EU_UKR_MOTORWAY"          id="EU_UKR_MOTORWAY_SHIELD" />
+    <Shield type="EU_UKR_INTERNATIONAL"     id="EU_UKR_INTERNATIONAL_SHIELD" />
+    <Shield type="EU_UKR_NATIONAL"          id="EU_UKR_NATIONAL_SHIELD" />
+    <Shield type="EU_UKR_REGIONAL"          id="EU_UKR_REGIONAL_SHIELD" />
+    <Shield type="TW_NATIONAL"              id="TW_NATIONAL_SHIELD" />
+    <Shield type="TW_EXPRESSWAY"            id="TW_EXPRESSWAY_SHIELD" />
+    <Shield type="TW_PROVINCE"              id="TW_PROVINCE_SHIELD" />
+    <Shield type="TW_COUNTRY"               id="TW_COUNTRY_SHIELD" />
+    <Shield type="TW_TOWN"                  id="TW_TOWN_SHIELD" />
+    <Shield type="CAN_YELLOWHEAD"           id="CAN_YELLOWHEAD_SHLD" />
+    <Shield type="CAN_CROWSNEST"            id="CAN_CROWSNEST_SHLD" />
+    <Shield type="TRANSCANADA"              id="TRANSCANADA_SHLD" />
+    <Shield type="AB_STATE"                 id="AB_STATE_SHLD" />
+    <Shield type="AB_BICENTENNIAL"          id="AB_BICENTENNIAL_SHLD" />
+    <Shield type="AB_MACKENZIE"             id="AB_MACKENZIE_SHLD" />
+    <Shield type="AB_PROVINCIAL"            id="AB_PROVINCIAL_SHLD" />
+    <Shield type="BC_YELLOWHEADSOUTH"       id="BC_YELLOWHEADSOUTH_SHLD" />
+    <Shield type="BC_STATE"                 id="BC_STATE_SHLD" />
+    <Shield type="MB_STATE"                 id="MB_STATE_SHLD" />
+    <Shield type="MB_PROVINCIAL"            id="MB_PROVINCIAL_SHLD" />
+    <Shield type="NB_STATE"                 id="NB_STATE_SHLD" />
+    <Shield type="NB_COLLECTOR"             id="NB_COLLECTOR_SHLD" />
+    <Shield type="NL_STATE"                 id="NL_STATE_SHLD" />
+    <Shield type="NS_STATE"                 id="NS_STATE_SHLD" />
+    <Shield type="NS_PROVINCIAL"            id="NS_PROVINCIAL_SHLD" />
+    <Shield type="NT_STATE"                 id="NT_STATE_SHLD" />
+    <Shield type="ON_STATE"                 id="ON_STATE_SHLD" />
+    <Shield type="ON_KINGHWY"               id="ON_KINGHWY_SHLD" />
+    <Shield type="ON_TOLLHWY"               id="ON_TOLLHWY_SHLD" />
+    <Shield type="ON_PROVINCIAL"            id="ON_PROVINCIAL_SHLD" />
+    <Shield type="PE_STATE"                 id="PE_STATE_SHLD" />
+    <Shield type="QC_STATE"                 id="QC_STATE_SHLD" />
+    <Shield type="QC_AUTOROUTE"             id="QC_AUTOROUTE_SHLD" />
+    <Shield type="SK_STATE"                 id="SK_STATE_SHLD" />
+    <Shield type="SK_PROVINCIAL"            id="SK_PROVINCIAL_SHLD" />
+    <Shield type="YT_STATE"                 id="YT_STATE_SHLD" />
+    <Shield type="CAN_INTERSTATE"           id="CAN_INTERSTATE_SHLD" />
+    <Shield type="CAN_FEDERAL"              id="CAN_FEDERAL_SHLD" />
+    <Shield type="NU_STATE"                 id="NU_STATE_SHLD" />
+    <Shield type="CHN_COUNTRY_MOTORWAY"     id="CHN_COUNTRY_MOTORWAY_SHLD" />
+    <Shield type="CHN_RING_MOTORWAY"        id="CHN_RING_MOTORWAY_SHLD" />
+    <Shield type="CHN_PROVINCE_MOTORWAY"    id="CHN_PROVINCE_MOTORWAY_SHLD" />
+    <Shield type="CHN_NATIONAL_ROAD"        id="CHN_NATIONAL_ROAD_SHLD" />
+    <Shield type="CHN_PROVINCIAL_ROAD"      id="CHN_PROVINCIAL_ROAD_SHLD" />
+    <Shield type="CHN_COUNTRY_ROAD"         id="CHN_COUNTRY_ROAD_SHLD" />
+    <Shield type="CHN_SHANGHAI"             id="CHN_SHANGHAI_SHLD" />
+    <Shield type="CHN_COUNTRY_CONNECTION"   id="CHN_COUNTRY_CONNECTION_SHLD" />
+    <Shield type="AUS_NATIONAL_ROAD"        id="AUS_NATIONAL_ROAD_SHLD" />
+    <Shield type="AUS_STATE_ROAD"           id="AUS_STATE_ROAD_SHLD" />
+    <Shield type="AUS_METROROAD"            id="AUS_METROROAD_SHLD" />
+    <Shield type="AUS_TOURIST_DRIVE"        id="AUS_TOURIST_DRIVE_SHLD" />
+    <Shield type="AUS_NATIONAL_HWY"         id="AUS_NATIONAL_HWY_SHLD" />
+    <Shield type="AUS_STATE_ROAD_NETWORK"   id="AUS_STATE_ROAD_NETWORK_SHLD" />
+    <Shield type="NZ_STATE_ROUTE"           id="NZ_STATE_ROUTE_SHLD" />
+    <Shield type="NZ_URBAN_ROUTE"           id="NZ_URBAN_ROUTE_SHLD" />
+    <Shield type="BRA_FEDERAL_ROAD"         id="BRA_FEDERAL_ROAD_SHLD" />
+    <Shield type="BRA_STATE_ROAD"           id="BRA_STATE_ROAD_SHLD" />
+    <Shield type="EU_AUT_FEDERAL_ROAD"      id="EU_AUT_FEDERAL_ROAD_SHIELD" />
+    <Shield type="EU_BEL_RINGWEG_ROAD"      id="EU_BEL_RINGWEG_ROAD_SHIELD" />
+    <Shield type="EU_DNK_RINGVEJ"           id="EU_DNK_RINGVEJ_SHIELD" />
+    <Shield type="EU_DEU_LANDESSTRASSE"     id="EU_DEU_LANDESSTRASSE_SHIELD" />
+    <Shield type="EU_DEU_KREISSTRASSE"      id="EU_DEU_KREISSTRASSE_SHIELD" />
+    <Shield type="EU_GRC_MOTORWAY"          id="EU_GRC_MOTORWAY_SHIELD" />
+    <Shield type="EU_HUN_OTHER_ROAD"        id="EU_HUN_OTHER_ROAD_SHIELD" />
+    <Shield type="EU_ITA_PROVINCE_ROAD"     id="EU_ITA_PROVINCE_ROAD_SHIELD" />
+    <Shield type="EU_ITA_COMUNALE_ROAD"     id="EU_ITA_COMUNALE_ROAD_SHIELD" />
+    <Shield type="EU_ITA_TRAFORO_ROAD"      id="EU_ITA_TRAFORO_ROAD_SHIELD" />
+    <Shield type="EU_LUX_EXPRESS"           id="EU_LUX_EXPRESS_SHIELD" />
+    <Shield type="EU_NOR_RING_ROAD"         id="EU_NOR_RING_ROAD_SHIELD" />
+    <Shield type="EU_MKD_MAIN_ROAD"         id="EU_MKD_MAIN_ROAD_SHIELD" />
+    <Shield type="EU_MKD_LOCAL_ROAD"        id="EU_MKD_LOCAL_ROAD_SHIELD" />
+    <Shield type="EU_ALB_NATIONAL"          id="EU_ALB_NATIONAL_SHIELD" />
+    <Shield type="EU_BIH_NATIONAL"          id="EU_BIH_NATIONAL_SHIELD" />
+    <Shield type="EU_BIH_MOTORWAY"          id="EU_BIH_MOTORWAY_SHIELD" />
+    <Shield type="MEX_FEDERAL_ROAD"         id="MEX_FEDERAL_ROAD_SHLD" />
+    <Shield type="MEX_STATE_ROAD"           id="MEX_STATE_ROAD_SHLD" />
+    <Shield type="EU_MLT_EXTRA_ROAD"        id="EU_MLT_EXTRA_ROAD_SHIELD" />
+    <Shield type="US_HWY_BUSINESS"          id="US_HWY_BUSINESS_SHLD" />
+  </ShieldMapping>
+</drawres>
+

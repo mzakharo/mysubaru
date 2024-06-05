@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SKUs>
+<default>
+<KWSOptions>
+<entry key="SplitByMainCity">0</entry>
+</KWSOptions>
+</default>
+<NA>
+<KWSOptions>
+<entry key="SplitByMainCity">1</entry>
+</KWSOptions>
+</NA>
+</SKUs>
+

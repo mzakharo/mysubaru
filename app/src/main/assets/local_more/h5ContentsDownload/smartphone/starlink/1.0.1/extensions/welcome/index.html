@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>STARLINK</title>
+    <script>
+        var language = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0, 2);
+        if (language == 'en') {
+            window.location.href = 'index_en.html' + location.search;
+        } else {
+            window.location.href = 'popupview://welcome/ok?q=other';
+        }
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+            user-select: none;
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 16px;
+        }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107564151"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (location.hostname.search(/www.smt-access.com/) != -1) {
+    gtag('config', 'UA-107564151-3');
+  }
+  else{
+    gtag('config', 'UA-107564151-2');
+  }
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

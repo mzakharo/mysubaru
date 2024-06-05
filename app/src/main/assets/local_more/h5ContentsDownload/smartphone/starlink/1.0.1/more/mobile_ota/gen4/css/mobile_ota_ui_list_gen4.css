@@ -1,0 +1,80 @@
+/* 【GEN4】*/
+/* ----- ストレージ容量 ----->> */
+.graph{
+  position: relative; /* IE is dumb */
+  /*
+  width: 300px;
+  */
+  margin-bottom: 0px;	  	  
+  border: 0px solid #207870;	  
+  padding: 0px;	  
+}
+.graph .bar span{
+  position: absolute;
+  left: 0em;
+}
+#storage_used {	
+  display: block;
+  position:relative;  /* ストレージの容量は固定なのでrelative */
+  background-color:black;
+  text-align: center;	
+  color:white;
+  height: 1em;
+  line-height: 0em;
+}	
+#region_total {
+  display: block;	
+  position:absolute; /* 横並びにするためabsolute */	
+  background-color:#adf;
+  text-align: center;	
+  color:white;	
+  height: 1em;	
+  line-height: 0em;	
+  top: 0%;   /* #storageと開始位置を合わせる */	
+  /* left: 36%; /* #storageの終了位置に合わせる */
+}
+#storage_free {
+  display: block;	
+  position:absolute; /* 横並びにするためabsolute */	
+  background-color:#ddd;
+  text-align: center;
+  color:white;
+  height: 1em;
+  line-height: 0em;
+  top: 0%;   /* #storageと開始位置を合わせる */
+  /* left: 50%; /* #storageの終了位置に合わせる */
+}
+#storagebar_value {
+  display: block;
+  position:absolute; /* 横並びにするためabsolute */
+  text-align: center;
+  color:black;
+  font-size: 80%;
+  line-height: 1.3em;
+  top: 0%;   /* #storageと開始位置を合わせる */
+  background: white;
+  /* left: 50%; /* #storageの終了位置に合わせる */
+}
+
+/* <<----- ストレージ容量 ----- */ 
+
+/* ----- 地図データリスト ----->> */
+ul.harman-ota-upd-region-list {
+    /* 全てダウンロードボタンの高さ分、下端マージンを確保する */
+    margin-bottom: 50px !important;
+}
+/* <<----- 地図データリスト ----- */
+
+/* ----- チェックボックス ----->> */
+input[type="checkbox"].harman-ota-check-box {
+    pointer-events: none;
+ 
+    position: absolute !important;
+    top : 50%;
+    margin-top : -8px;
+    margin-left: -65px;
+
+    -webkit-transform: scale(2.7);
+    transform: scale(2.7);
+}
+/* <<----- チェックボックス ----- */ 

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- EngineStringLocalizer -->
+  <string name="ID_ALERT_ACCIDENT_BLACKSPOT" rm_notes="Spoken warning that a dangerous intersection (accident blackspot) is ahead.">Accident blackspot ahead</string>
+  <string name="ID_ALERT_DANGEROUS_CURVE" rm_notes="Spoken warning that a dangerous curve is ahead.">Dangerous curve ahead</string>
+  <string name="ID_ALERT_RAILROAD_CROSSING" rm_notes="Spoken warning that a rail road crossing is ahead.">Rail crossing ahead</string>
+  <string name="ID_ALERT_RED_LIGHT" rm_notes="Spoken warning that a red light camera is ahead.">Red light camera ahead</string>
+  <string name="ID_ALERT_RED_LIGHT_AND_SPEED" rm_notes="Spoken warning that a red light and speed camera is ahead.">Red light and speed camera ahead</string>
+  <string name="ID_ALERT_SCHOOL_ZONE" rm_notes="Spoken warning that the user is entering a school zone.">Entering school zone</string>
+  <string name="ID_ALERT_SPEED_BUMP" rm_notes="Spoken warning that a speed bump is ahead.">Speed bump ahead</string>
+  <string name="ID_ALERT_SPEED_FIXED" rm_notes="Spoken warning that a speed camera is ahead.">Speed camera ahead</string>
+  <string name="ID_ALERT_SPEED_MOBILE" rm_notes="Spoken warning that a mobile speed camera is ahead.">Mobile speed camera ahead</string>
+  <string name="ID_ALERT_SPEED_KNOWN_MOBILE" rm_notes="Spoken warning that a mobile speed camera is often seen ahead.">Mobile speed camera often seen ahead</string>
+  <string name="ID_ALERT_SPEED_TRAP" rm_notes="Spoken warning that a speed trap is ahead.">Speed trap ahead</string>
+  <string name="ID_ALERT_LIVE_POICE" rm_notes="Spoken arning that there is police ahead.">Police ahead</string>
+  <string name="ID_ALERT_KNOWN_ENFORCEMENT" rm_notes="Spoken arning that there is known speed enforcement point ahead.">Known enforcement point ahead</string>
+  <string name="ID_ALERT_SPEED_AVERAGE" rm_notes="Spoken warning that an average speed camera is ahead.">Average Speed Camera ahead</string>
+  <string name="ID_ALERT_SPEED_CHECK" rm_notes="Spoken warning that the speed limit is changing ahead.">Speed change ahead</string>
+  <string name="ID_ALERT_ACCIDENT" rm_notes="Spoken warning that there is a traffic accident ahead.">Accident</string>
+  <string name="ID_ALERT_BUSH_FIRE" rm_notes="Spoken warning that there is a bushfire ahead.">Bushfire</string>
+  <string name="ID_ALERT_FLOODED_ROAD" rm_notes="Spoken warning that there is a flooded road ahead.">Flooded road</string>
+  <string name="ID_ALERT_ICE_HAZARD" rm_notes="Spoken warning that there is an ice hazard ahead.">Ice hazard</string>
+  <string name="ID_ALERT_TOLL_BOOTH" rm_notes="Spoken warning that there is a toll booth ahead.">Toll booth</string>
+  <string name="ID_ALERT_AMBER_ALERT" rm_notes="Spoken announcement that there is an Amber Alert in affect.">Amber Alert</string>
+  
+  <string name="ID_ALERT_SQUARE_ACCIDENT_BLACKSPOT" rm_notes="Warning that a dangerous intersection (accident blackspot) is ahead.">Accident blackspot</string>
+  <string name="ID_ALERT_SQUARE_DANGEROUS_CURVE" rm_notes="Warning that a dangerous curve is ahead.">Dangerous curve</string>
+  <string name="ID_ALERT_SQUARE_RAILROAD_CROSSING" rm_notes="Warning that a rail road crossing is ahead.">Rail crossing</string>
+  <string name="ID_ALERT_SQUARE_RED_LIGHT" rm_notes="Warning that a red light camera is ahead.">Red light camera</string>
+  <string name="ID_ALERT_SQUARE_RED_LIGHT_AND_SPEED" rm_notes="Warning that a red light and speed camera is ahead.">Red light and speed camera</string>
+  <string name="ID_ALERT_SQUARE_SCHOOL_ZONE" rm_notes="Warnings that the user is entering a school zone.">School zone</string>
+  <string name="ID_ALERT_SQUARE_SPEED_BUMP" rm_notes="Warnings that a speed bump is ahead.">Speed bump</string>
+  <string name="ID_ALERT_SQUARE_SPEED_FIXED" rm_notes="Warning that a speed camera is ahead.">Speed camera</string>
+  <string name="ID_ALERT_SQUARE_SPEED_MOBILE" rm_notes="Warning that a mobile speed camera is ahead.">Mobile speed camera</string>
+  <string name="ID_ALERT_SQUARE_SPEED_KNOWN_MOBILE" rm_notes="Warning that a mobile speed camera is often seen ahead.">MSC often seen here</string>
+  <string name="ID_ALERT_SQUARE_SPEED_TRAP" rm_notes="Warning that a speed trap is ahead.">Speed trap</string>
+  <string name="ID_ALERT_SQUARE_SPEED_LIVE_POLICE" rm_notes="Warning that there is police ahead.">Live police</string>
+  <string name="ID_ALERT_SQUARE_SPEED_KNOWN_ENFORCEMENT" rm_notes="Warning that police are often seen ahead.">Known police point</string>
+  <string name="ID_ALERT_SQUARE_SPEED_AVERAGE" rm_notes="Warning that an average speed camera is ahead.">Average Speed Camera</string>
+  <string name="ID_ALERT_SQUARE_SPEED_CHECK" rm_notes="Warning that the speed limit is changing ahead.">Reduced Speed Zone</string>
+  <string name="ID_ALERT_SQUARE_EV_CHARGING" rm_notes="Alert that there is an EV charging staion ahead.">EV Charging station</string>
+  <string name="ID_ALERT_SQUARE_ROAD_HAZARD" rm_notes="Warning that there is a road hazard ahead.">Road hazard</string>
+  <string name="ID_ALERT_SQUARE_CHILDREN_PLAYING" rm_notes="Warning that there are children playing ahead.">Children at play</string>
+  <string name="ID_ALERT_SQUARE_ACCIDENT" rm_notes="Warning that there is a trafic accident ahead.">Accident</string>
+  <string name="ID_ALERT_SQUARE_TRAFFIC_JAM" rm_notes="Warning that there is a traffic jam ahead.">Traffic jam</string>
+  <string name="ID_ALERT_SQUARE_CONSTRUCTION_ZONE" rm_notes="Warning that there is a construction zone ahead.">Construction zone</string>
+  <string name="ID_ALERT_SQUARE_BUSH_FIRE" rm_notes="Warning that there is a bushfire ahead.">Bushfire</string>
+  <string name="ID_ALERT_SQUARE_FLOODED_ROAD" rm_notes="Warning that there is a flooded road ahead.">Flooded road</string>
+  <string name="ID_ALERT_SQUARE_ICE_HAZARD" rm_notes="Warning that there is an ice hazard ahead.">Ice hazard</string>
+  <string name="ID_ALERT_SQUARE_NARROW_BRIDGE" rm_notes="Warning that there is a narrow bridge ahead.">Narrow bridge</string>
+  <string name="ID_ALERT_SQUARE_ROAD_CLOSED" rm_notes="Warning that there is a closed road ahead.">Road closed</string>
+  <string name="ID_ALERT_SQUARE_ROAD_KILL" rm_notes="Warning that there is a dead creature ahead.">Road kill</string>
+  <string name="ID_ALERT_SQUARE_TOLL_BOOTH" rm_notes="Alert that there is a toll booth ahead.">Toll booth</string>
+
+  <string name="ID_ALERT_TRAFFIC_SIGN_START_OF_NO_OVERTAKING" rm_notes="Alert that there is a Start Of No Overtaking traffic sign ahead.">No Passing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_END_OF_NO_OVERTAKING" rm_notes="Alert that there is an End Of No Overtaking traffic sign ahead.">Restriction Ends</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE" rm_notes="Alert that there is a Protected Overtaking Extra Lane traffic sign ahead.">Passing Lane</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE_RIGHT" rm_notes="Alert that there is a Protected Overtaking Extra Lane Right traffic sign ahead.">Passing Lane</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE_LEFT" rm_notes="Alert that there is a Protected Overtaking Extra Lane Left traffic sign ahead.">Passing Lane</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_LANE_MERGE_RIGHT" rm_notes="Alert that there is a Lane Merge Right traffic sign ahead.">Lane Merges</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_LANE_MERGE_LEFT" rm_notes="Alert that there is a Lane Merge Left traffic sign ahead.">Lane Merges</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_LANE_MERGE_CENTRE" rm_notes="Alert that there is a Lane Merge Centre traffic sign ahead.">Lane Merges</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_RAILWAY_CROSSING_PROTECTED" rm_notes="Alert that there is a Railway Crossing Protected traffic sign ahead.">Protected Crossing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_RAILWAY_CROSSING_UNPROTECTED" rm_notes="Alert that there is a Railway Crossing Unprotected traffic sign ahead.">Unprotected Crossing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_ROAD_NARROWS" rm_notes="Alert that there is a Road Narrows traffic sign ahead.">Road Narrows</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_SHARP_CURVE_LEFT" rm_notes="Alert that there is a Sharp Curve Left traffic sign ahead.">Sharp Curve</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_SHARP_CURVE_RIGHT" rm_notes="Alert that there is a Sharp Curve Right traffic sign ahead.">Sharp Curve</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_WINDING_ROAD_STARTING_LEFT" rm_notes="Alert that there is a Winding Road Starting Left traffic sign ahead.">Winding Road</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_WINDING_ROAD_STARTING_RIGHT" rm_notes="Alert that there is a Winding Road Starting Right traffic sign ahead.">Winding Road</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_START_OF_NO_OVERTAKING_TRUCKS" rm_notes="Alert that there is a Start Of No Overtaking Trucks traffic sign ahead.">No Passing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_END_OF_NO_OVERTAKING_TRUCKS" rm_notes="Alert that there is an End Of No Overtaking Trucks traffic sign ahead.">Restriction Ends</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_STEEP_HILL_UPWARDS" rm_notes="Alert that there is a Steep Hill Upwards traffic sign ahead.">Steep Gradient</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_STEEP_HILL_DOWNWARDS" rm_notes="Alert that there is a Steep Hill Downwards traffic sign ahead.">Steep Gradient</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_STOP_SIGN" rm_notes="Alert that there is a traffic Stop Sign ahead.">Stop Sign</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_LATERAL_WIND" rm_notes="Alert that there is a Lateral Wind traffic sign ahead.">Crosswind</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_GENERAL_WARNING" rm_notes="Alert that there is a General Warning traffic sign ahead.">Warning</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_RISK_OF_GROUNDING" rm_notes="Alert that there is a Risk Of Grounding traffic sign ahead.">Grounding Risk</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_GENERAL_CURVE" rm_notes="Alert that there is a General Curve traffic sign ahead.">Curve</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_END_OF_ALL_RESTRICTIONS" rm_notes="Alert that there is an End Of All Restrictions traffic sign ahead.">Restrictions End</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_GENERAL_HILL" rm_notes="Alert that there is a General Hill traffic sign ahead.">Hill</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_ANIMAL_CROSSING" rm_notes="Alert that there is an Animal Crossing traffic sign ahead.">Animal Crossing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_ICY_CONDITIONS" rm_notes="Alert that there is an Icy Conditions traffic sign ahead.">Icy Conditions</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_SLIPPERY_ROAD" rm_notes="Alert that there is a Slippery Road traffic sign ahead.">Slippery Surface</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_FALLING_ROCKS" rm_notes="Alert that there is a Falling Rocks traffic sign ahead.">Falling Rocks</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_SCHOOL_ZONE" rm_notes="Alert that there is a School Zone traffic sign ahead.">School Zone</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_TRAMWAY_CROSSING" rm_notes="Alert that there is a Tramway Crossing traffic sign ahead.">Tramway Crossing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_CONGESTION_HAZARD" rm_notes="Alert that there is a Congestion Hazard traffic sign ahead.">Congestion</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_ACCIDENT_HAZARD" rm_notes="Alert that there is an Accident Hazard traffic sign ahead.">Hazard</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_PRIORITY_OVER_ONCOMING_TRAFFIC" rm_notes="Alert that there is a Priority Over Oncoming Traffic traffic sign ahead.">Priority</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_YIELD_TO_ONCOMING_TRAFFIC" rm_notes="Alert that there is an Yield To Oncoming Traffic traffic sign ahead.">Yield</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_CROSSING_WITH_PRIORITY_FROM_THE_RIGHT" rm_notes="Alert that there is a Crossing With Priority From The Right traffic sign ahead.">Priority Right</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_PEDESTRIAN_CROSSING" rm_notes="Alert that there is a Pedestrian Crossing traffic sign ahead.">Pedestrian Crossing</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_YIELD" rm_notes="Alert that there is a Yield traffic sign ahead.">Yield</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_NO_ENGINE_BRAKE" rm_notes="Alert that there is a No Engine Brake traffic sign ahead.">No Engine Brake</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_END_OF_NO_ENGINE_BRAKE" rm_notes="Alert that there is an End Of No Engine Brake traffic sign ahead.">Restriction Ends</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_NO_IDLING" rm_notes="Alert that there is a No Idling traffic sign ahead.">No Idling</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_TRUCK_ROLLOVER" rm_notes="Alert that there is a Truck Rollover traffic sign ahead.">Rollover Hazard</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_LOW_GEAR" rm_notes="Alert that there is a Low Gear traffic sign ahead.">Low Gear</string>
+  <string name="ID_ALERT_TRAFFIC_SIGN_END_OF_LOW_GEAR" rm_notes="Alert that there is an End Of Low Gear traffic sign ahead.">Low Gear Ends</string>
+  <string name="ID_ALERT_TRUCK_TOLL_BOOTH" rm_notes="Alert that there is a Toll Booth (for trucks) ahead.">Toll Booth</string>
+  <string name="ID_ALERT_TRUCK_WEIGH_STATION" rm_notes="Alert that there is a weigh station ahead.">Weigh Station</string>
+  <string name="ID_ALERT_WEATHER_FLOOD" rm_notes="Severe weather alert - flood">Flood</string>
+  <string name="ID_ALERT_WEATHER_WINTER" rm_notes="Severe weather alert - Winter">Winter</string>
+  <string name="ID_ALERT_WEATHER_TROPICAL" rm_notes="Severe weather alert - Tropical">Tropical</string>
+  <string name="ID_ALERT_WEATHER_HIGH_WIND" rm_notes="Severe weather alert - High wind">High wind</string>
+  <string name="ID_ALERT_WEATHER_MARINE" rm_notes="Severe weather alert - Marine">Marine</string>    
+  
+  <string name="ID_GUIDANCE_ACCESS" rm_notes="Prefix for an access to a road (noun).">Access</string>
+  <string name="ID_GUIDANCE_ACCIDENT_AHEAD" rm_notes="Instruction played when there is a traffic accident ahead on the current route.">Traffic accident ahead</string>
+  <string name="ID_GUIDANCE_BETTER_ROUTE_HAS_BEEN_FOUND" rm_notes="Instruction played when a better alternate route has been found.">A better route has been found.</string>
+  <string name="ID_GUIDANCE_CIRCLE" rm_notes="Suffix indicating a junction between a circular section of road and other roads.">Circle</string>
+  <string name="ID_GUIDANCE_CONGESTION_AHEAD" rm_notes="Instruction played when there is congestion ahead on the current route.">Congestion ahead</string>
+  <string name="ID_GUIDANCE_DEAD_END" rm_notes="Dead End street.">Dead End</string>
+  <string name="ID_GUIDANCE_EAST" rm_notes="East - route direction.">East</string>
+  <string name="ID_GUIDANCE_ENTER" rm_notes="Instruction to enter highway.">Enter</string>
+  <string name="ID_GUIDANCE_EXIT" rm_notes="Highway exit (noun) e.g. 'Exit 5'.">Exit</string>
+  <string name="ID_GUIDANCE_EXIT_NO" rm_notes="Highway exit number e.g. 'Exit No. 5'.">Exit No.</string>
+  <string name="ID_GUIDANCE_FERRY" rm_notes="Ferry (boat ferry not train ferry).">Ferry</string>
+  <string name="ID_GUIDANCE_GUIDING_YOU_TO_YOUR_NEXT_DESTINATION" rm_notes="Instruction played when the user will be guided to the next destination in a multi-stop trip.">Guiding you to your next destination.</string>
+  <string name="ID_GUIDANCE_HAVE_NICE_TRIP" rm_notes="Default vocal phrase used for volume test.">Have a nice trip.</string>
+  <string name="ID_GUIDANCE_HIGHLIGHTED_ROUTE" rm_notes="Route that is highlighted on the map, used after 'Proceed to'">the highlighted route</string>
+  <string name="ID_GUIDANCE_HIGHWAY" rm_notes="Highway">Highway</string>
+  <string name="ID_GUIDANCE_LANE_RESTRICTION_AHEAD" rm_notes="Instruction played when there are lane restrictions ahead on the current route.">Lane restrictions ahead</string>
+  <string name="ID_GUIDANCE_LEAVE_ROAD" rm_notes="Instruction to leave a major road.">Leave the road</string>
+  <string name="ID_GUIDANCE_NORTH" rm_notes="North - route direction.">North</string>
+  <string name="ID_GUIDANCE_NORTH_EAST" rm_notes="North East - route direction.">North East</string>
+  <string name="ID_GUIDANCE_NORTH_WEST" rm_notes="North West - route direction.">North West</string>
+  <string name="ID_GUIDANCE_ON_RAMP" rm_notes="Highway on-ramp.">On Ramp</string>
+  <string name="ID_GUIDANCE_PROCEED_TO" rm_notes="Instruction to proceed to somewhere (e.g. used in 'Proceed to the highlighted route')">Proceed to</string>
+  <string name="ID_GUIDANCE_NEAR_TO_STREET_ABBR" rm_notes="Indicating a location is near a street. %s is the full street name e.g. 'Near Main Street'.">Near %s</string>
+  <string name="ID_GUIDANCE_BEARING_FROM_STREET" rm_notes="Indicating a bearing to a location like '250 ft N of Main St'. %s is distance, %s is distance unit, %s is direction, %s is the full street name.">%s %s %s of %s</string>
+  <string name="ID_GUIDANCE_NEAR_TO_ADDRESS_ABBR" rm_notes="Indicating a location that is near an address. %s is the house number and %s is street name. e.g. 'Near 25 Main Street'.">Near %s %s</string>
+  <string name="ID_GUIDANCE_ROAD_CLOSURE_AHEAD" rm_notes="Instruction played when there is a road closure ahead on the current route.">Road closure ahead</string>
+  <string name="ID_GUIDANCE_ROAD_WORK_AHEAD" rm_notes="Instruction played when there is road work ahead on the current route.">Construction ahead</string>
+  <string name="ID_GUIDANCE_ROUNDABOUT" rm_notes="Suffix for a roundabout.">Roundabout</string>
+  <string name="ID_GUIDANCE_SOUTH" rm_notes="South - route direction.">South</string>
+  <string name="ID_GUIDANCE_SOUTH_EAST" rm_notes="South East - route direction.">South East</string>
+  <string name="ID_GUIDANCE_SOUTH_WEST" rm_notes="South West - route direction.">South West</string>
+  <string name="ID_GUIDANCE_START" rm_notes="Instruction to start">Start</string>
+  <string name="ID_GUIDANCE_TOLL" rm_notes="Toll road.">Toll</string>
+  <string name="ID_GUIDANCE_TRAFFIC_CONDITIONS_HAVE_CHANGED" rm_notes="Instruction played when traffic conditions have changed.">Traffic conditions have changed.</string>
+  <string name="ID_GUIDANCE_TRAFFIC_CONDITIONS_HAVE_IMPROVED" rm_notes="Instruction played when traffic conditions have improved.">Traffic conditions have improved.</string>
+  <string name="ID_GUIDANCE_TRAFFIC_CONDITIONS_HAVE_WORSENED" rm_notes="Instruction played when traffic conditions have worsened.">Traffic conditions have worsened.</string>
+  <string name="ID_GUIDANCE_TURN_AROUND" rm_notes="Instruction to turn around. Turn around instruction.">Turn around</string>
+  <string name="ID_GUIDANCE_UNNAMED_ROAD" rm_notes="Displayed when name of road is not available.">Unnamed road</string>
+  <string name="ID_GUIDANCE_WEATHER_AHEAD" rm_notes="Instruction played when there is adverse weather ahead on the current route.">Adverse weather ahead</string>
+  <string name="ID_GUIDANCE_WEST" rm_notes="West - route direction.">West</string>
+  <string name="ID_GUIDANCE_WRONG_WAY" rm_notes="Indication that the user is travelling the wrong way along a road">Wrong way</string>
+  <string name="ID_GUIDANCE_YOUR_DESTINATION_IS_OFFROAD_S_S_S" rm_notes="Instruction played when the user is proceeding to an off-road destination. '%s' (e.g. '2') will be the distance, '%s' (e.g. 'kilometres') will be the unit for the distance and '%s' will be the cardinal direction (e.g. 'North')">Your destination is off-road %s %s %s.</string>
+  <string name="ID_GUIDANCE_YOUR_ROUTE_HAS_BEEN_CHANGED" rm_notes="Instruction played when a better alternate route has been found and automatically chosen.">Your route has been changed.</string>
+  <string name="ID_HEADINGABBR_E" rm_notes="East, abbreviated.">E</string>
+  <string name="ID_HEADINGABBR_N" rm_notes="North, abbreviated.">N</string>
+  <string name="ID_HEADINGABBR_S" rm_notes="South, abbreviated.">S</string>
+  <string name="ID_HEADINGABBR_W" rm_notes="West, abbreviated.">W</string>
+  <string name="ID_HEADINGABBR_NE" rm_notes="Northeast, abbreviated.">NE</string>
+  <string name="ID_HEADINGABBR_NW" rm_notes="Northwest, abbreviated.">NW</string>
+  <string name="ID_HEADINGABBR_SE" rm_notes="Southeast, abbreviated.">SE</string>
+  <string name="ID_HEADINGABBR_SW" rm_notes="Southwest, abbreviated.">SW</string>
+  <string name="ID_ROAD_AHEAD" rm_notes="When exiting to an unnamed road - says 'Exit ahead'.">ahead</string>
+  <string name="ID_ROAD_LEFT" rm_notes="When exiting to an unnamed road - says 'Exit left'.">left</string>
+  <string name="ID_ROAD_RIGHT" rm_notes="When exiting to an unnamed road - says 'Exit right'.">right</string>
+  <string name="ID_TTS_SPEED_LIMIT_WARNING" rm_notes="Instruction played when user is approaching a road with a lower speed limit than the current road.">Speed limit exceeded.</string>
+  <string name="ID_TTS_SPEED_LIMIT_FORMAT" rm_notes="Format string to specify how speed limits will be spoken. '%d' is speed limit (e.g. '50'), '%s' is unit distance (e.g. 'kilometres per hour')">%d %s</string>
+  <string name="ID_UNITS_FEET" rm_notes="Full units (feet)">Feet</string>
+  <string name="ID_UNITS_FT" rm_notes="Abbreviated units (feet)">ft</string>
+  <string name="ID_UNITS_HMM" rm_notes="Abbreviated units (hours and minutes)">h:mm</string>
+  <string name="ID_UNITS_HOURS" rm_notes="Full units (hours)">Hours</string>
+  <string name="ID_UNITS_HR" rm_notes="Abbreviated units (hours)">hr</string>
+  <string name="ID_UNITS_KILOMETERS" rm_notes="Full units (kilometers)">Kilometers</string>
+  <string name="ID_UNITS_KILOMETERS_PER_HOUR" rm_notes="Full units (kilometers per hour)">Kilometers per hour</string>
+  <string name="ID_UNITS_KM" rm_notes="Abbreviated units (kilometers)">km</string>
+  <string name="ID_UNITS_KMH" rm_notes="Abbreviated units (kilometers per hour)">km/h</string>
+  <string name="ID_UNITS_M" rm_notes="Abbreviated units (meters)">m</string>
+  <string name="ID_UNITS_METRES" rm_notes="Full units (meters)">Meters</string>
+  <string name="ID_UNITS_METRES_PER_SECOND" rm_notes="Full units (meters per second)">Meters per second</string>
+  <string name="ID_UNITS_MI" rm_notes="Abbreviated units (miles)">mi</string>
+  <string name="ID_UNITS_MILES" rm_notes="Full units (miles)">Miles</string>
+  <string name="ID_UNITS_MILES_PER_HOUR" rm_notes="Full units (miles per hour)">Miles per hour</string>
+  <string name="ID_UNITS_MIN" rm_notes="Abbreviated units (minutes)">min</string>
+  <string name="ID_UNITS_MINUTES" rm_notes="Full units (minutes)">Minutes</string>
+  <string name="ID_UNITS_MPH" rm_notes="Abbreviated units (miles per hour)">mph</string>
+  <string name="ID_UNITS_MS" rm_notes="Abbreviated units (meters per second)">m/s</string>
+  <string name="ID_UNITS_S" rm_notes="Abbreviated units (seconds)">s</string>
+  <string name="ID_UNITS_SECONDS" rm_notes="Full units (seconds)">Seconds</string>
+  <string name="ID_UNITS_YARDS" rm_notes="Full units (yards)">Yards</string>
+  <string name="ID_UNITS_YD" rm_notes="Abbreviated units (yards)">yd</string>
+  <string name="ID_SETTINGS_RESTORE_DEFAULT" rm_notes="Confirmation dialog when pressing 'Restore Defaults'. Options are Cancel/OK.">All settings will be restored to factory defaults.</string>
+</resources>
+

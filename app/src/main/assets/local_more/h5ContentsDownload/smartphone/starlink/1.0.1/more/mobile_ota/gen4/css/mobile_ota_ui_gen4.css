@@ -1,0 +1,46 @@
+/* 【GEN4】*/
+
+/** モードレスウィンドウ用クラス **/
+.harman-ota-dialog-mordaless-for-map{
+    z-index: 1000 !important;
+    overflow-y: scroll;
+}
+
+/**  モードレスウィンドウ用スクロール表示 **/
+#dialog-confirm-modaless::-webkit-scrollbar{
+    width: 5px;
+}
+
+.harman-ota-dialog-image{
+    height: 30px;
+    bottom: -8px;
+    position: relative;
+    /*   margin: 1px; */
+}
+.harman-ota-dialog-text-rtl-right{
+    font-size: 16px;
+    margin: 2px;
+    direction: rtl;
+    unicode-bidi: embed;
+    text-align: right;
+}
+.harman-ota-dialog-text{
+    font-size: 16px;
+    margin: 2px;
+}
+
+#dialog-confirm-modaless::-webkit-scrollbar-thumb{
+    background: #aaa;
+    border-radius: 10px;
+}
+/* <<----- モーダルウィンドウ  -----  */
+/* 地図更新設定の機能 */
+.harman-ota-regionHelp-text{
+    font-size: 80%;
+}
+
+.harman-ota-regionHelp-text-small{
+    font-size: 70%;
+}
+
+

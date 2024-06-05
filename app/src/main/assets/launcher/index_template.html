@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://10.121.31.116:8008/smartaccess/launcher/start.html -->
+<html manifest="launcher.appcache" style="background-color: #000000;" class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://10.121.31.116:8008/smartaccess/launcher/start.html">--><base href=".">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Launcher</title>
+<!--<link rel="stylesheet" media="screen" href="../../../jQueryMobile/1.3.2/jquery.mobile-1.3.2.min.css" />-->
+	<link rel="stylesheet" media="screen" href="css/reset.css">
+	<link rel="stylesheet" media="screen" href="css/launcher.css">
+
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/jquery.tmpl.min.js"></script>
+	<script src="js/jquery.mobile.no_mobile_init.js"></script>
+	<script src="js/design.js"></script>				<!-- ※必ず、launcger.jsよりも前に読み込んで下さい。 -->
+	<script src="js/sha256_lib.js"></script>
+	<script src="js/keyvaluestore.js"></script>
+	<script src="js/launcher.js"></script>
+
+</head>
+<body onload="init()">
+<object type="application/NaviNativeAPI" id="plugin" width="0" height="0"></object>
+
+	<div id="wrapper" class="bgType1">
+		<div id="header">
+			<div id="backHome" class="uiHeadButton"></div>
+			<div id="forCar" style="display: none">4Car</div>
+			<div id="indicator">
+				<ul>
+					<li id="antenna" class="numLv0" style="display: none"></li>
+					<li id="wifi" class="numLv0" style="display: none"></li>
+					<li id="bluetooth" class="numLv0" style="display: none"></li>
+					<li id="battery" class="dirX numLv0" style="display: none"></li>
+				</ul>
+				<div id="clock">18:59</div>
+			</div>
+		</div>
+		<div id="contents">
+			<div id="gadgetViewport">
+				<div id="gadget" style="width: 1212px; left: 0px;">
+                    <%= apps %>
+				</div>
+			</div>
+			<ul>
+				<li id="prevPage" class="uiPager" style="display: none;"></li>
+				<li id="nextPage" class="uiPager"></li>
+			</ul>
+			<div id="scrollBar" class="uiScroller">
+				<div id="slider">
+					<div id="slideBarL" style="left: 0px;"></div><div id="slideBarM" style="left: 6px; width: 288px;"></div><div id="slideBarR" style="left: 294px;"></div>
+				</div>
+			</div>
+		</div>
+		<div id="waitingView" style="display: none;"></div>
+	</div>
+
+	<!-- jQuery Template - SimpleApp Base -->
+	<script type="text/x-jquery-tmpl" id="templateSimpleApp">
+		<div id="${elemId}" class="unitApp typeSimpleApp movable">
+			{{if appTmpl}}
+				{{tmpl appTmpl}}
+			{{else appIcon}}
+				<div class="appIcon"><img src="${appIcon}" alt="${appName}" /></div>
+				<div class="appName" style="display: none">${appName}</div>
+			{{/if}}
+			<div class="appTouch"></div>
+		</div>
+	</script>
+
+	<!-- jQuery Template - WidgetApp Base -->
+	<script type="text/x-jquery-tmpl" id="templateWidgetApp">
+		<div id="${elemId}" class="unitApp typeWidgetApp movable">
+			{{if appTmpl}}
+				{{tmpl appTmpl}}
+			{{else appIcon}}
+				<div class="appIcon"><img src="${appIcon}" alt="${appName}" /></div>
+			{{/if}}
+			<div class="appTouch"></div>
+		</div>
+	</script>
+
+	<!-- jQuery Template - WidgetApp Clock -->
+	<script type="text/x-jquery-tmpl" id="templateApp5">
+		<div class="clock">00:00</div>
+		<div class="year">0000</div>
+		<div class="date">00/00</div>
+		<div class="day">Sunday</div>
+	</script>
+
+	<!-- jQuery Template - WidgetApp Calendar -->
+	<script type="text/x-jquery-tmpl" id="templateApp6">
+		<div class="date">00/00</div>
+		<div class="day">Sunday</div>
+		<div class="time">
+			<div class="clockFrom">00:00</div>
+			<div class="clockTo">00:00</div>
+		</div>
+		<div class="schedule">予定</div>
+	</script>
+
+	<!-- jQuery Template - WidgetApp Weather -->
+	<script type="text/x-jquery-tmpl" id="templateApp7">
+		<div class="temperature">
+			<div class="location"><span class="txt"> </span></div>
+			<div class="degrees">
+				<span class="num"> </span>
+				<span class="sign"> </span>
+				<!--<span class="sign">℃</span>-->
+				<!--<span class="sign">&#8451;</span>-->
+				<!--<span class="sign">&#8457;</span>-->
+			</div>
+		</div>
+		<div class="weather">
+			<div class="weatherName"><span class="txt"> </span></div>
+			<div class="weatherIcon"></div>
+		</div>
+	</script>
+
+	<!-- jQuery Template - WidgetApp MusicPlayer -->
+	<script type="text/x-jquery-tmpl" id="templateApp8">
+		<div class="jacketThumb"><img src="img/app8/thumb_no_image.png" alt="" /></div>
+		<div class="artistName">アーティスト名</div>
+		<div class="albumName">アルバム名</div>
+		<div class="musicTitle">曲名</div>
+	</script>
+
+
+</body></html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UIEAudioLibrary - Sample HTML application</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { margin: 10px; padding: 0; color: #4D4B43; font-family: Helvetica, Arial, sans-serif; font-size: 12pt;}
+h1,h2 { color: #33322C; font-weight: normal; }
+h1 { font-weight: normal; background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14pt; }
+h2 { font-size: 12pt; }
+p { font-size: 10pt; }
+textarea.code { border: 1px #666666 solid; width: 300px; height: 80px; resize: none; }
+input.run { display: block; border: 1px #cccccc solid; box-shadow: 1px 1px 1px #666; margin-top: 2px; }
+input.run:hover { cursor: pointer; }
+</style>
+
+<script type="text/javascript" src="js/audiostreamer.js"></script>
+<script type="text/javascript" src="js/microserver.js"></script>
+<script type="text/javascript">
+  function run(code_id) {
+    var node = document.getElementById(code_id);
+    eval(node.value);
+  }
+</script>
+</head>
+<body>
+<h1>UIE Audio Library</h1>
+<p>This Java Script library provides bride to the native UIE Audio Library on the handset device.</p>
+<p>Latest version: 2.0.0</p>
+
+<div>
+<h2>addToPlaylist</h2>
+<textarea id="addToPlaylist" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+var playlist = ["http://radio.jphip.com:8800", "http://stream.thumbplay.com/WMG4/Thumb_Content/Full_AAC/WMG/Apr13/040813/075679956231/resources/075679956231_00009_256.m4a?nga=20140507164558&amp;track=21047587&amp;player=K3Blem9iYUxCeVZURTJVbCtYdjEwUT09&amp;env=live&amp;sig=D8Es20D7f-Ph6keoXDvIVLzAsFj-OlpU-2DIvK9NnAA&amp;as=SIMPLE&amp;rnga=20140507164558&amp;host=subaru.auto.us&amp;playerKey=%2BpezobaLByVTE2Ul%2BXv10Q%3D%3D?deviceid=b77949d2afbf70125c59be5b4be1859e262878c3&amp;devicename=subaru&amp;sysInfo=dXN8c3ViYXJ1fHx8fHw3fHRvdWNofGVuZ3x8fHxWYXIuMDg0fDEuNC4xMTh8"];
+streamer.addToPlaylist(function(xml) {
+  alert(xml);
+}, playlist);
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('addToPlaylist')"/>
+</div>
+
+<div>
+<h2>getPlaylist</h2>
+<textarea id="getPlaylist" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.getPlaylist(function(playlist) {
+  alert(playlist);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('getPlaylist')"/>
+</div>
+
+<div>
+<h2>resetPlaylist</h2>
+<textarea id="resetPlaylist" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.resetPlaylist(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('resetPlaylist')"/>
+</div>
+
+<div>
+<h2>play</h2>
+<textarea id="play" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.play(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('play')"/>
+</div>
+
+<div>
+<h2>play with offset</h2>
+<textarea id="play-with-offset" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.play(function(xml) {
+  alert(xml);
+}, 10000);
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('play-with-offset')"/>
+</div>
+
+<div>
+<h2>pause</h2>
+<textarea id="pause" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.pause(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('pause')"/>
+</div>
+
+<div>
+<h2>skip</h2>
+<textarea id="skip" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.skip(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('skip')"/>
+</div>
+
+<div>
+<h2>stop</h2>
+<textarea id="stop" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.stop(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('stop')"/>
+</div>
+
+<div>
+<h2>getStatus</h2>
+<textarea id="getStatus" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.getStatus(function(xml) {
+  alert(xml);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('getStatus')"/>
+</div>
+
+<div>
+<h2>seek</h2>
+<textarea id="seek" class="code" >
+var pos = 10000;
+var waitBuffering = 0;
+var streamer = UIEAudioStreamer.getInstance();
+streamer.seek(function(xml) {
+  alert(xml);
+}, pos, waitBuffering);
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('seek')"/>
+</div>
+
+<div>
+<h2>batch</h2>
+<textarea id="batch" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+var playlist = ["http://radio.jphip.com:8800", "http://stream.thumbplay.com/WMG4/Thumb_Content/Full_AAC/WMG/Apr13/040813/075679956231/resources/075679956231_00009_256.m4a?nga=20140507164558&amp;track=21047587&amp;player=K3Blem9iYUxCeVZURTJVbCtYdjEwUT09&amp;env=live&amp;sig=D8Es20D7f-Ph6keoXDvIVLzAsFj-OlpU-2DIvK9NnAA&amp;as=SIMPLE&amp;rnga=20140507164558&amp;host=subaru.auto.us&amp;playerKey=%2BpezobaLByVTE2Ul%2BXv10Q%3D%3D?deviceid=b77949d2afbf70125c59be5b4be1859e262878c3&amp;devicename=subaru&amp;sysInfo=dXN8c3ViYXJ1fHx8fHw3fHRvdWNofGVuZ3x8fHxWYXIuMDg0fDEuNC4xMTh8"];
+var batchTasks = [];
+streamer.resetPlaylist(batchTasks);
+streamer.addToPlaylist(batchTasks, playlist);
+streamer.play(batchTasks);
+streamer.batch(function(xml) {
+  alert(xml);
+}, batchTasks);
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('batch')"/>
+</div>
+
+<div>
+<h2>onEvent</h2>
+<textarea id="onEvent" class="code" >
+var streamer = UIEAudioStreamer.getInstance();
+streamer.onEvent(function(event) {
+  alert(event);
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('onEvent')"/>
+</div>
+
+
+<p><a href="index.html">Go Back</a></p>
+
+<script type="text/javascript">
+    var is_headunit = false;
+    var streamer = UIEAudioStreamer.getInstance();
+    if (is_headunit) {
+        streamer.useXHR("192.168.1.1", 80);
+    } else {
+        // Obtain a port number local server listen on.
+        var microserver = UIEMicroserver.getInstance();
+        microserver.getLocalServerPort(function(port) {
+           streamer.useXHR("127.0.0.1", port);
+        });
+    }
+</script>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+</html>

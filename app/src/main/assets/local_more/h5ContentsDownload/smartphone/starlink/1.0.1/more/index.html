@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script>
+		if (navigator.serviceWorker) {
+			//(1)Service Workerのインストール
+			navigator.serviceWorker.register('../common/js/service-worker.js', { scope: '.' });
+			//(2)マニュフェストに変更があれば、Service Worker側でリソースの再キャッシュを行う
+			if (navigator.onLine) {
+				fetch("/more.appcache");
+			}
+		}
+	</script>
+
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="./css/harman_ota_ui.css" />
+
+	<style type="text/css">
+		body {
+			overflow-y:scroll;
+			-webkit-user-select:none;
+			 -khtml-user-select:none;
+			   -moz-user-select:none;
+				-ms-user-select:none;
+				 -o-user-select:none;
+					user-select:none;
+		}
+
+		a {
+			-webkit-touch-callout:none;
+		}
+		.ui-btn-inner{
+			white-space: normal;
+		}
+		ul[data-role="listview"] li h2,
+		ul[data-role="listview"] li p{
+			overflow: visible;
+			white-space: normal;
+		}
+	</style>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    
+    <link rel="stylesheet" href="./mobile_ota/common/css/css_library/jquery-confirm.min.css">
+    <!-- override jquery-confirm.min.css for font-family >>> -->
+	<style type="text/css">
+        .jconfirm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99999999;
+            font-family: Helvetica,Arial,sans-serif;
+            overflow: hidden;
+        }
+    </style>
+	<!-- override jquery-confirm.min.css for font-family <<< -->
+    <script src="./mobile_ota/common/js/js_library/jquery-confirm.min.js"></script>
+    
+    <script type="text/javascript" src="../common/js/microserver.js"></script>
+	<script type="text/javascript" src="./js/aha_connect_sdk.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_sdk.js"></script>
+
+	<!-- [ota] for pc debug -->
+	<!-- hook lib -->
+	<script type="text/javascript" src="../pc_debug/js/mws.saemu.js"></script>
+
+	<!-- load lib -->
+    <script type="text/javascript" src="../common/js/mwsRequestManager-1.0.2.js"></script>
+	<script type="text/javascript" src="./js/smt.common.js"></script>
+   	<script type="text/javascript" src="./js/smt.word.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_common.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_ui.js"></script>
+	<script type="text/javascript" src="./js/config.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_controller.js"></script>
+	<script type="text/javascript" src="./mobile_ota/gen4/js/mobile_ota_common_gen4.js"></script>
+	<script type="text/javascript" src="./mobile_ota/gen4/js/mobile_ota_controller_gen4.js"></script>
+	<script type="text/javascript" src="./mobile_ota/gen4/js/regionPageManager.js"></script>
+	
+ <script src="./js/lib.js"></script>
+ <script src="../common/js/mysubaru.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107564151"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (location.hostname.search(/www.smt-access.com/) != -1) {
+    gtag('config', 'UA-107564151-3');
+  }
+  else{
+    gtag('config', 'UA-107564151-2');
+  }
+</script>
+</head>
+
+<body onload="init();mySubaruLoop();">
+<div id="configpage" data-role="page" data-title="Config">
+	<div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+		<h1 id="Car_TXT_0078">MORE</h1>
+		<!--<a href="../more/index.html" data-role="button" data-theme="a" data-icon="back" data-ajax="false"><div id="Car_TXT_0056_3">BACK</div></a>-->
+	</div>
+	<div id="morecontent" data-role="content" style="visibility: hidden;">
+		<div >
+			<ul data-role="listview">
+          <li id="mysubaruField" style="display:none" onclick='if(navigator.userAgent.indexOf(" iP")>0){location.href ="https://itunes.apple.com/app/mysubaru/id1005186680?mt=8&urlscheme=mysubaru";}else{location.href ="intent://mysubaru/#Intent;package=com.subaru.telematics.app.remote;end";}'>
+              <a href="#">
+                  <h3 id="mysubaru">MySubaru</h3>
+              </a>
+          </li>
+         <li class="usOnlyFields" style="display:none" onclick='location.href="https://subaru.quick.guide";'>
+              <a href="#">
+                  <h3 id="qrgmobile">Quick Reference Guide for mobile</h3>
+              </a>
+          </li>
+				<li id="huupdsettingField" style="display:none;">
+					<a href="#">
+						<h2 id="huupdsetting">Map update setting</h2>
+						<p id="huupdlabel">You can update in-vehicle units.</p>
+						<br>
+						<p><span id="huupdlicenselabel">expiration date:</span><span id="huupdlicensevalue">-</span></p>
+					</a>
+				</li>
+				<li id="manualField" style="display:none;">
+					<a href="#">
+						<h2 id="manualTitle">User Manual</h2>
+						<p id="manualText">Updating the Map data using a smartphone</p>
+					</a>
+				</li>
+				<li id="delegationSelectField" style="display:none;">
+					<a href="#">
+						<h2 id="delegationSelect">Navigation</h2>
+						<p id="dispNaviApp">There are several navigation apps that can be used in the in-car-device.<br>Please select a navigation app in the in-car-device.<br><br>You can select a navigation of when ran app setting destination at in-car-device.</p>
+					</a>
+				</li>
+				<li id="locatfieldcontainionSelectField" style="display:none;">
+					<a href="#">
+						<h2 id="locationselect">Region selection</h2>
+						<p id="Car_TXT_0x521">Select the primary region of use</p>
+						<br>
+						<p id="Car_TXT_0x523">* This selection will help provide you with an app that has been optimized for the region of use.</p>
+					</a>
+				</li>
+				<li id="clrcarinfoField">
+					<a href="#">
+						<h2 id="clrcarinfo">Clear STARLINK application data</h2>
+						<p id="Car_TXT_00521">The STARLINK application data will be deleted.</p>
+						<br>
+						<p id="Car_TXT_00523">* Resolves unstable connection with In-Car-Device.</p>
+					</a>
+				</li>
+				<li id="termsField">
+					<a href="#">
+						<h2 id="terms">Terms of Use</h2>
+						<p id="termsupdate"></p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- // デザイン変更前
+		<div data-role="fieldcontain" id="huupdSettingField">
+			<a id="huupdsetting" data-role="button">Head unit Update settings</a>
+			<p id="huupdlabel">You can update the infomation of head unit.</p>
+			<p><span id="huupdlicenselabel">License :</span><span id="huupdlicensevalue">yyyy/mm/dd</span></p>
+		</div>
+		<div data-role="fieldcontain">
+            <a id="clrcarinfo" data-role="button">Delete the STARLINK application data</a>
+			<p id="Car_TXT_00521">The setting data in the STARLINK application is deleted.</p>
+			<p id="Car_TXT_00523">* When link with In-Car-Device is unstable, please try deleting the setting data.</p>
+		</div>
+        <div data-role="fieldcontain">
+            <a id="locationselect" data-role="button">Region selection</a>
+            <p id="Car_TXT_0x521">Select the primary region of use</p>
+            <p id="Car_TXT_0x523">* This selection will help provide you with an app that has been optimized for the region of use.</p>
+        </div>
+        <div data-role="fieldcontain" id="delegationBtn" style="display:none;">
+            <a id="delegationSelect" data-role="button">デリゲーション切り替え</a>    
+            <p id="dispNaviApp">地図アプリを選択します。</p>
+        </div>
+		-->
+		<p id="appVersion" style="text-align:center;"><span class="label"></span><span class="value"></span></p>
+	</div>    
+</div>
+    <div id="delegationPage" data-role="page">
+        <div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+            <h1><div id="DELEGATION_TITLE_001">デリゲーション選択</div></h1>
+            <a href="javascript:history.back();" data-role="button" data-theme="a" data-icon="back"><div id="Car_TXT_0056_3">BACK</div></a>
+        </div>
+        <div data-role="content" id="triggerTarget">
+            <div data-role="ui-field-contain">
+                <fieldset data-role="controlgroup" id="delegationList">
+                    <legend><div id="DELEGATION_TITLE_002">地図アプリ選択</div></legend>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <input id="delegationSelect_ok" type="button" value="OK" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

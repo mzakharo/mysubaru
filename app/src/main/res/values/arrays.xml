@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tab_icons">
+        <item>@drawable/icon_0</item>
+        <item>@drawable/icon_1</item>
+        <item>@drawable/icon_2</item>
+        <item>@drawable/icon_2</item>
+        <item>@drawable/icon_2</item>
+    </array>
+    <array name="tab_labels">
+        <item>@string/tab_label_0</item>
+        <item>@string/tab_label_1</item>
+        <item>@string/tab_label_2</item>
+        <item>@string/tab_label_3</item>
+        <item>@string/tab_label_4</item>
+    </array>
+    <array name="tab_urls">
+        <item>file:///android_asset/docroot/tab_0.html</item>
+        <item>file:///android_asset/docroot/tab_1.html</item>
+        <item>file:///android_asset/local_more/h5ContentsDownload/smartphone/starlink/1.0.1/more/index.html</item>
+        <item>file:///android_asset/docroot/tab_2.html</item>
+        <item>file:///android_asset/docroot/tab_2.html</item>
+    </array>
+</resources>

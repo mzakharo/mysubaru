@@ -1,0 +1,205 @@
+/* 【GEN4】*/
+/*--コンテンツ--*/
+.ui-content{
+    padding : 0px 15px 15px 15px;
+     visibility: hidden;
+}
+
+/* ----- 地図表示部 ----->> */
+#mapArea {
+    margin-right: -15px;
+    margin-bottom: -15px;
+    margin-left: -15px;
+}
+ul.harman-ota-upd-region-map {
+    /* 表示位置固定 */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+}
+/* <<----- 地図表示部 ----- */ 
+
+/* ----- 地図表示部（leaflet） ----->> */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.leaflet-tile-pane {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+}
+
+.leaflet-top,
+.leaflet-bottom {
+	position: absolute;
+	z-index: 800;  /* overlay_search_onより小さくなるように設定 */
+	pointer-events: none;
+}
+/* <<----- 地図表示部 ----- */ 
+
+
+/* ----- 検索エリア ----->> */
+
+.ui-bar-b {
+    border: 1px solid   #696969;
+    background:       #696969;
+    color:        #ffffff;
+    font-weight: bold;
+    text-shadow: 0 -1px 1px #696969;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#696969), to(#696969));
+    background-image: -webkit-linear-gradient(top, #696969, #696969); 
+    background-image:  -moz-linear-gradient(top, #696969, #696969); 
+    background-image:   -ms-linear-gradient(top, #696969, #696969); 
+    background-image:   -o-linear-gradient(top, #696969, #696969); 
+    background-image:     linear-gradient(top, #696969, #696969);
+  }
+
+.mobile-ota-search-list {
+    position: absolute;
+    z-index: 1001;
+    width:100%;
+    height:100%;
+    background-color: #eee;
+    overflow-y: scroll !important
+}
+.mobile-ota-search-list ul.harman-ota-upd-data-list.ui-listview {
+    margin: 0px;
+}
+
+.mobile-ota-search-list-value {
+    display: none;
+}
+.mobile-ota-search-overlay-serchBox-on {
+    z-index: 901 !important;
+}
+.mobile-ota-search-overlay-serchBox-off {
+    z-index: 0 !important;
+}
+/* <<----- 検索エリア ----- */ 
+/* ----- 地図データリスト ----->> */
+ul.harman-ota-upd-region-list {
+    /* 容量グラフの高さ分、上端マージンを確保する */
+    margin-top: 1em !important;
+    /* 全てダウンロードボタンの高さ分、下端マージンを確保する */
+    margin-bottom: 50px !important;
+    overflow-y:scroll !important;
+}
+/* <<----- 地図データリスト ----- */ 
+
+/* ----- ストレージ容量 ----->> */
+.graph{
+  position: relative; /* IE is dumb */
+  /*
+  width: 300px;
+  */
+  margin-bottom: 0px;	  	  
+  border: 0px solid #207870;	  
+  padding: 0px;	  
+}
+.graph .bar span{
+  position: absolute;
+  left: 0em;
+}
+#storage_used {	
+  display: block;
+  position:relative;  /* ストレージの容量は固定なのでrelative */
+  background-color:black;
+  text-align: center;	
+  color:white;
+  height: 1em;
+  line-height: 0em;
+}	
+#region_total {
+  display: block;	
+  position:absolute; /* 横並びにするためabsolute */	
+  background-color:#adf;
+  text-align: center;	
+  color:white;	
+  height: 1em;	
+  line-height: 0em;	
+  top: 0%;   /* #storageと開始位置を合わせる */	
+  /* left: 36%; /* #storageの終了位置に合わせる */
+}
+#storage_free {
+  display: block;	
+  position:absolute; /* 横並びにするためabsolute */	
+  background-color:#ddd;
+  text-align: center;
+  color:white;	
+  height: 1em;
+  line-height: 0em;
+  top: 0%;   /* #storageと開始位置を合わせる */	
+  /* left: 50%; /* #storageの終了位置に合わせる */
+}
+#storagebar_value {
+  display: block;
+  position:absolute; /* 横並びにするためabsolute */
+  text-align: center;
+  color:black;
+  font-size: 80%;
+  line-height: 1.3em;
+  top: 0%;   /* #storageと開始位置を合わせる */
+  background: white;
+  /* left: 50%; /* #storageの終了位置に合わせる */
+}
+
+/* <<----- ストレージ容量 ----- */
+/* ----- 現在地〜検索結果表示  ----->>  */
+#autoRegionsSetting_list ul li.ui-btn-up-c {
+    border: 0px;
+    background: #eee;
+    font-weight: 700;
+    color: #222;
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#eee),to(#eee));
+    background-image: -webkit-linear-gradient(#eee,#eee);
+    background-image: -moz-linear-gradient(#eee,#eee);
+    background-image: -ms-linear-gradient(#eee,rgb(238, 238, 238));
+    background-image: -o-linear-gradient(#eee,#eee);
+    background-image: linear-gradient(#eee,#eee);
+}
+.mobile-ota-select-list-contents {
+    display: table
+}
+
+.mobile-ota-select-list-svg-route {
+    fill:#6F6E6E;
+}
+
+.mobile-ota-select-list-img-current {
+    width: 20px !important;
+    padding-left: 10px;
+}
+
+.mobile-ota-select-list-text {
+	display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.mobile-ota-select-list-img-destination {
+    width: 20px !important;
+    padding-left: 10px;
+}
+
+.mobile-ota-select-list-img-route {
+    height: 35px !important;    
+    top: 0% !important;
+    margin-top: -30px !important;
+
+}
+
+/* ----- チェックボックス ----->> */
+input[type="checkbox"].harman-ota-check-box {
+    pointer-events: none;
+ 
+    position: absolute !important;
+    top : 50%;
+    margin-top : -8px;
+    margin-left: -65px;
+
+    -webkit-transform: scale(2.7);
+    transform: scale(2.7);
+}
+/* <<----- チェックボックス ----- */ 

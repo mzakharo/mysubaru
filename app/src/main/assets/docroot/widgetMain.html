@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+	<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="./js/serverConfig.js"></script>
+    <script type="text/javascript" src="./js/microserver.js"></script>
+	<script type="text/javascript" src="./js/mwsRequestManager-1.0.2.js"></script>
+	<script>
+		const ONE_SECOND= 1000;
+		const RETRY_TIME= 3 *ONE_SECOND;
+
+		var mwsUrl= "";
+		var mwsPort= "";
+
+        function waitMwsReady()
+        {
+			mwsRequestManager.initialize(function(){
+				mwsPort = mwsRequestManager.getMWSPort();
+				if( mwsPort && mwsPort !=-1 ){
+					mwsUrl= mwsRequestManager.getMWSRequestUrl();
+					console.info( "@widgetMain.html: mwsUrl=" +mwsUrl );
+					getPid();
+				}else{
+					console.error( "@widgetMain.html: mwsPort=" +mwsPort );
+					setTimeout( function(){waitMwsReady();}, RETRY_TIME );
+				}
+			});
+        }
+        
+		function loadWidgetUrl( strPid ){
+            $.ajax({
+                type: "GET",
+                url: mwsUrl +"kvs/" +strPid +"_widgetsUrl",
+				beforeSend: function(){
+					console.log( "@widgetMain.html: loadWidgetUrl() getfrom=" +mwsUrl +"kvs/" +strPid +"_widgetsUrl" );
+				},
+                success: function( data, status, xhr ){
+					console.info( "@widgetMain.html: loadWidgetUrl() goto=" +data );
+					document.getElementById("_key").value= ckey;
+					document.getElementById("_secret").value= csec;
+	                document.getElementById("id_reqWidget").action= data;
+	                document.getElementById("id_reqWidget").submit();
+                },
+                error: function( xhr ){
+					console.error( "@widgetMain.html: loadWidgetUrl() error, xhr.status=" +xhr.status );
+                	setTimeout( function(){loadWidgetUrl(strPid);}, RETRY_TIME );
+                }
+            });
+		}
+
+		function getPid(){
+			$.ajax({
+				type: "GET",
+				url: mwsUrl +"kvs/launcher_pid_vehicle/",
+				success: function( data, status, xhr ){
+					if( xhr.responseText =="" ){
+						console.warn( "@widgetMain.html: getPid() empty" );
+						setTimeout( function(){getPid();}, RETRY_TIME );
+					}else{
+						var strPid= xhr.responseText.split(";")[0];
+						loadWidgetUrl( strPid );
+					}
+				},
+				error: function( xhr ){
+					console.error( "@widgetMain.html: getPid() error, xhr.status=" +xhr.status );
+					if( xhr.status ==404 ){
+						setTimeout( function(){getPid();}, RETRY_TIME );
+					}else{
+						setTimeout( function(){waitMwsReady();}, RETRY_TIME );
+					}
+				}
+			});
+		} //end getPid()
+	</script>
+</head>
+<body>
+	<form action="" method="POST" id="id_reqWidget">
+	    <input type="hidden" name="consumer_key" id="_key">
+	    <input type="hidden" name="consumer_secret" id="_secret">
+	</form>
+    <script>
+		waitMwsReady();
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<title>UIERemoteStorage - Sample HTML application</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { margin: 10px; padding: 0; color: #4D4B43; font-family: Helvetica, Arial, sans-serif; font-size: 12pt;}
+h1,h2 { color: #33322C; font-weight: normal; }
+h1 { font-weight: normal; background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14pt; }
+h2 { font-size: 12pt; }
+p { font-size: 10pt; }
+textarea.code { border: 1px #666666 solid; width: 300px; height: 80px; resize: none; }
+input.run { display: block; border: 1px #cccccc solid; box-shadow: 1px 1px 1px #666; margin-top: 2px; }
+input.run:hover { cursor: pointer; }
+</style>
+
+<script type="text/javascript" src="js/remotestorage.js"></script>
+<script type="text/javascript" src="js/microserver.js"></script>
+<script type="text/javascript">
+  function run(code_id) {
+    var node = document.getElementById(code_id);
+    eval(node.value);
+  }
+</script>
+
+
+</head>
+<body>
+
+<h1>UIERemoteStorage</h1>
+<p>The remote storage class provides capability of basic CRUD operations to HTML application, unlike normal sessionStorage or localStorage in HTML5, every data will be stored in key-value store on Handset which is connected to Head Unit. This storage has very simple APIs similar with Web Storage, an user does not need to take care about details.</p>
+<p>Latest version: 2.0.1</p>
+
+<div>
+<h2>Create and Read</h2>
+<textarea id="create" class="code" >
+var storage = UIERemoteStorage.getInstance();
+storage.set('87207f94518eb9980e9d0696903c37c5', +new Date(), function(xhr) {
+  alert("Request completed: XHR status " + xhr.status);
+
+  // Check HTTP response code.
+  if (xhr.status == 200) {
+    storage.get('87207f94518eb9980e9d0696903c37c5', function(val, xhr) {
+      if (val) {
+        alert("Value: " + val);
+      } else {
+        alert("Request failed: XHR status " + xhr.status);
+      }
+    });
+  } else {
+    alert("Request failed: XHR status " + xrh.status);
+  }
+});
+
+
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('create')"/>
+</div>
+
+<div>
+<h2>Error Handling</h2>
+<textarea id="error_handle" class="code" >
+var storage = UIERemoteStorage.getInstance();
+var too_long_key = '87207f94518eb9980e9d0696903c37c87207f94518eb9980e9d0696903c37c87207f94518eb9980e9d0696903c37c87207f94518eb9980e9d0696903c37c555587207f94518eb9980e9d0696903c37c5';
+storage.set(too_long_key, +new Date(), function(xhr) {
+  // Check HTTP response code.
+  if (xhr.status != 200) {
+    alert("Request failed: XHR status " + xhr.status);
+  }
+});
+</textarea>
+<input class="run" type="button" value="Run" onclick="run('error_handle')"/>
+</div>
+
+<p><a href="index.html">Go Back</a></p>
+<br/>
+<br/>
+<br/>
+<br/>
+<script type="text/javascript">
+    var is_headunit = false;
+    var storage = UIERemoteStorage.getInstance();
+    if (is_headunit) {
+        storage.useXHR("192.168.1.1", 80);
+    } else {
+        // Obtain a port number local server listen on.
+        var microserver = UIEMicroserver.getInstance();
+        microserver.getLocalServerPort(function(port) {
+           storage.useXHR("127.0.0.1", port);
+        });
+    }
+</script>
+
+</body>
+</html>

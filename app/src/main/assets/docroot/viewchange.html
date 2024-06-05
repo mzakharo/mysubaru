@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<title>UIEViewChange - Sample HTML application</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body { margin: 10px; padding: 0; color: #4D4B43; font-family: Helvetica, Arial, sans-serif; font-size: 12pt;}
+h1,h2 { color: #33322C; font-weight: normal; }
+h1 { font-weight: normal; background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14pt; }
+h2 { font-size: 12pt; }
+p { font-size: 10pt; }
+textarea.code { border: 1px #666666 solid; width: 300px; height: 80px; resize: none; }
+input.run { display: block; border: 1px #cccccc solid; box-shadow: 1px 1px 1px #666; margin-top: 2px; }
+input.run:hover { cursor: pointer; }
+</style>
+<script type="text/javascript" src="js/viewchange.js"></script>
+<script type="text/javascript" src="js/microserver.js"></script>
+<script type="text/javascript">
+  function run(code_id) {
+    var node = document.getElementById(code_id);
+    eval(node.value);
+  }
+</script>
+</head>
+<body>
+<h1>UIEViewChange</h1>
+<p>UIE View Change Library provides a service to change a view layout of mobile device.</p>
+<p>Latest version: 1.0.0</p>
+<div>
+<form>
+<div>
+<label for="tabnum-input">Tab Number</label>
+<select id="tabnum-input" name="tabnum">
+<option value="0">None</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</div>
+<div>
+<label for="portrait-input">Interface Orientation</label>
+<select id="portrait-input" name="portrait">
+<option value="true">Portrait</option>
+<option value="false">Landscape</option>
+</select>
+</div>
+</form>
+<textarea id="script-textarea" class="code" ></textarea>
+<script id="script-template" type="script/template">
+var viewchange = UIEViewChange.getInstance();
+viewchange.set({
+  tabnum: {{tabnum}},
+  portrait: {{portrait}}
+}, function(val, xhr) {
+  if (!xhr) {
+    alert("Success");
+  } else {
+    alert("Failure");
+  }
+});
+</script>
+<input class="run" type="button" value="Run" onclick="run('script-textarea')"/>
+</div>
+<p><a href="index.html">Go Back</a></p>
+<br/>
+<br/>
+<br/>
+<br/>
+<script type="text/javascript">
+  var is_headunit = false;
+  var viewchange = UIEViewChange.getInstance();
+  if (is_headunit) {
+    viewchange.useXHR('192.168.1.1', 80);
+  } else {
+    // Obtain a port number local server listen on.
+    var microserver = UIEMicroserver.getInstance();
+    microserver.getLocalServerPort(function(port) {
+      viewchange.useXHR('127.0.0.1', port);
+    });
+  }
+  function updateScript(tabnum, portrait) {
+    var
+      textarea = document.querySelector('#script-textarea'),
+      template = document.querySelector('#script-template');
+    textarea.innerHTML =
+        template.innerHTML
+            .replace('{{tabnum}}', tabnum)
+            .replace('{{portrait}}', portrait);
+  }
+  updateScript('0', 'true');
+  document.querySelector('form')
+      .addEventListener(
+          'change',
+          function (event) {
+            var
+              tabnum = this.querySelector('#tabnum-input').value,
+              portrait = this.querySelector('#portrait-input').value;
+            updateScript(tabnum, portrait);
+          },
+          false);
+</script>
+</body>
+</html>

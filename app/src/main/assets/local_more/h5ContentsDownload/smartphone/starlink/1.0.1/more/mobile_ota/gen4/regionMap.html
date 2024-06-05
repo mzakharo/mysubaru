@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script>
+		if (navigator.serviceWorker) {
+			//(1)Service Workerのインストール
+			navigator.serviceWorker.register('./js/service-worker.js', { scope: '.' });
+			//(2)マニュフェストに変更があれば、Service Worker側でリソースの再キャッシュを行う
+			if (navigator.onLine) {
+				fetch("/gen4.appcache");
+			}
+		}
+	</script>
+
+	<script type="text/javascript" src="../mota_loader.js"></script>
+	<script type="text/javascript">
+		var loadQue = [];
+		var url = 'url';
+		MOtaLoader.load(loadQue, function(){
+			MOtaLoader.loadGen4(function() {
+				var loadQue = [];
+				var url = 'url';
+				loadQue.push({ url: './js/js_library/leaflet/leaflet.css' });
+				loadQue.push({ url: './css/mobile_ota_ui_map_gen4.css' });
+				loadQue.push({ url: './js/js_library/leaflet/leaflet-src.js' });
+				loadQue.push({ url: './js/js_library/leaflet/leaflet.js' });
+				loadQue.push({ url: '../common/js/js_library/jquery-ui.min.js' });
+				loadQue.push({ url: './js/regionPageManager.js' });
+				loadQue.push({ url: './js/regionMapPageManager.js' });
+				MOtaLoader.load(loadQue);
+			});
+		});
+	</script>
+
+	<style type="text/css">
+		body {
+			overflow-y:hidden;
+			-webkit-user-select:none;
+			 -khtml-user-select:none;
+			   -moz-user-select:none;
+				-ms-user-select:none;
+				 -o-user-select:none;
+					user-select:none;
+		}
+
+		a {
+			-webkit-touch-callout:none;
+		}
+		.ui-btn-inner{
+			white-space: normal;
+                }
+	</style>
+	
+</head>
+<body>
+<div id="huupd_regionMapPage" data-role="page" data-title="Region map page">
+	<div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+		<!--<h1 id="regionPageTitle">Region info.</h1>-->
+		<h1 id="regionPageTitle"></h1>
+		<a href="../../index.html" data-role="button" data-ajax="false" data-theme="a" data-icon="back" id="backbutton"><div id="Car_TXT_0056_3">BACK</div></a>
+		<img src="./images/icon-setting_NOR.png" class="ui-btn-right" style="margin: 3px 5px 0 0" height="25" href="#" id="setting"/>
+	</div>
+	<div id="mapcontent" data-role="content" style="visibility: hidden;">
+		<div name="overlay" class="mobile-ota-overlay mobile-ota-overlay-off"></div>
+		<div id="overlayForModaless" class="mobile-ota-overlay mobile-ota-overlay-off"></div>
+		<!-- ↓ 地図表示エリア ↓ -->
+		<div id="mapArea">
+			<div id="searchBox">
+				<input type="search" id="tagKeySearch" data-mini="true">
+			</div>
+			<!-- ↓ 検索結果表示エリア ↓ -->
+			<div id="search_list"></div>	
+			<!-- ↑ 検索結果表示エリア ↑ -->
+			<div id="map"></div>
+			<!-- ↓ 容量グラフ ↓ -->
+			<div id="storage_bar"></div>
+			<!-- ↑ 容量グラフ ↑ -->	
+        </div>
+        <!-- ↑ 地図表示エリア ↑ -->
+		<div id="update_list"></div>
+		<div id="autoRegionsSetting_list"></div>
+		<!-- ↓ モーダルダイアログ ↓ -->
+		<div id="dialog-confirm"><p></p></div>
+		<div id="dialog-confirm-modaless"><p></p></div>
+		<!-- ↑ モーダルダイアログ ↑ -->	
+		<div id="button_alldownload"></div>
+	</div>
+</div>
+</body>
+</html>

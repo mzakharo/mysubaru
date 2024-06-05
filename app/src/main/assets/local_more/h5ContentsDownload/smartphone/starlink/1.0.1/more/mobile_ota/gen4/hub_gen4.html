@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script>
+		if (navigator.serviceWorker) {
+			//(1)Service Workerのインストール
+			navigator.serviceWorker.register('./js/service-worker.js', { scope: '.' });
+			//(2)マニュフェストに変更があれば、Service Worker側でリソースの再キャッシュを行う
+			if (navigator.onLine) {
+				fetch("/gen4.appcache");
+			}
+		}
+	</script>
+	
+	<script type="text/javascript" src="../mota_loader.js"></script>
+	<script type="text/javascript">
+		MOtaLoader.loadGen4(function(){
+			MOtaLoader.loadScript('./js/hubPageManager_gen4.js');
+		});
+	</script>
+
+	<style type="text/css">
+		body {
+			overflow-y:scroll;
+			-webkit-user-select:none;
+			 -khtml-user-select:none;
+			   -moz-user-select:none;
+				-ms-user-select:none;
+				 -o-user-select:none;
+					user-select:none;
+		}
+
+		a {
+			-webkit-touch-callout:none;
+		}
+		.ui-btn-inner{
+			white-space: normal;
+		}
+	</style>
+	
+</head>
+<body>
+<div id="hub_gen4" data-role="page" data-title="Region Info">
+	<div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+		<!--<h1 id="regionPageTitle">Region info.</h1>-->
+		<h1 id="hubGen4PageTitle"></h1>
+		<a href="../../index.html" data-role="button" data-ajax="false" data-theme="a" data-icon="back"><div id="Car_TXT_0056_3">BACK</div></a>
+	</div>
+	<div data-role="content">
+	</div>
+</div>
+</body>
+</html>

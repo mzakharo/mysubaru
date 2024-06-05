@@ -1,0 +1,22 @@
+﻿CACHE MANIFEST
+# Ver000
+#
+# Explicitly cached 'master entries'.
+CACHE:
+start.html
+error.html
+css/reset.css
+css/launcher.css
+js/jquery.tmpl.min.js
+js/jquery.mobile.no_mobile_init.js
+js/design.js
+js/sha256_lib.js
+js/keyvaluestore.js
+js/launcher.js
+img/ui/sprite.png
+img/app5/sprite.gif
+img/app7/sprite.gif
+
+# Resources that require the user to be online.
+NETWORK:
+*

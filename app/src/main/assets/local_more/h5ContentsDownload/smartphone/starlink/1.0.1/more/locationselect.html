@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script>
+		if (navigator.serviceWorker) {
+			//(1)Service Workerのインストール
+			navigator.serviceWorker.register('../common/js/service-worker.js', { scope: '.' });
+			//(2)マニュフェストに変更があれば、Service Worker側でリソースの再キャッシュを行う
+			if (navigator.onLine) {
+				fetch("/more.appcache");
+			}
+		}
+	</script>
+
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="./css/harman_ota_ui.css" />
+	<style type="text/css">
+		body {
+			overflow-y:scroll;
+			-webkit-user-select:none;
+			 -khtml-user-select:none;
+			   -moz-user-select:none;
+				-ms-user-select:none;
+				 -o-user-select:none;
+					user-select:none;
+		}
+
+		a {
+			-webkit-touch-callout:none;
+		}
+		.ui-btn-inner{
+			white-space: normal;
+		}
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../common/js/microserver.js"></script>
+    <script type="text/javascript" src="../common/js/mwsRequestManager-1.0.2.js"></script>
+	<script type="text/javascript" src="./js/smt.common.js"></script>
+    <script type="text/javascript" src="./js/smt.word.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_common.js"></script>
+	<script type="text/javascript" src="./js/aha_connect_sdk.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_sdk.js"></script>
+	<script type="text/javascript" src="./js/harman_ota_ui.js"></script>
+	<script type="text/javascript" src="./js/config.js"></script>
+</head>
+
+<body onload="init()">
+<div id="locationselectpage" data-role="page" data-title="Config">
+	<div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+		<h1><div id="LOCATION_TITLE_001">利用地域選択</div></h1>
+		<a href="javascript:toConfig()" data-role="button" data-theme="a" data-icon="back"><div id="Car_TXT_0056_3">BACK</div></a>
+	</div>
+	<div data-role="content">
+		<div data-role="ui-field-contain">
+		<fieldset data-role="controlgroup">
+                    <legend><div  id="LOCATION_TITLE_002">利用地域選択</div></legend>
+			<input id="location_ja" name="location" type="radio" value="JPN"/>
+			<label for="location_ja"><div  id="LOCATION_001">日本</div></label>
+			<input id="location_us" name="location" type="radio" value="USA"/>
+			<label for="location_us"><div  id="LOCATION_002">United States of America</div></label>
+			<input id="location_ca" name="location" type="radio" value="CAN"/>
+			<label for="location_ca"><div  id="LOCATION_003">Canada</div></label>
+			<input id="location_mx" name="location" type="radio" value="MEX"/>
+			<label for="location_mx"><div  id="LOCATION_004">México</div></label>
+			<input id="location_uk" name="location" type="radio" value="GBR"/>
+			<label for="location_uk"><div  id="LOCATION_005">United Kingdom</div></label>
+			<input id="location_de" name="location" type="radio" value="DEU"/>
+			<label for="location_de"><div  id="LOCATION_006">Deutschland</div></label>
+			<input id="location_nl" name="location" type="radio" value="NLD"/>
+			<label for="location_nl"><div  id="LOCATION_007">Nederland</div></label>
+			<input id="location_it" name="location" type="radio" value="ITA"/>
+			<label for="location_it"><div  id="LOCATION_008">Italia</div></label>
+			<input id="location_fr" name="location" type="radio" value="FRA"/>
+			<label for="location_fr"><div  id="LOCATION_009">France</div></label>
+			<input id="location_es" name="location" type="radio" value="ESP"/>
+			<label for="location_es"><div  id="LOCATION_010">España</div></label>
+			<input id="location_sv" name="location" type="radio" value="SWE"/>
+			<label for="location_sv"><div  id="LOCATION_011">Sverige</div></label>
+			<input id="location_pl" name="location" type="radio" value="POL"/>
+			<label for="location_pl"><div  id="LOCATION_012">Polska</div></label>
+			<input id="location_gr" name="location" type="radio" value="GRC"/>
+			<label for="location_gr"><div  id="LOCATION_013">Ελλάδα</div></label>
+			<input id="location_ru" name="location" type="radio" value="RUS"/>
+			<label for="location_ru"><div  id="LOCATION_014">Россия</div></label>
+			<input id="location_cs" name="location" type="radio" value="CZE"/>
+			<label for="location_cs"><div  id="LOCATION_015">česká republika</div></label>
+			<input id="location_pt" name="location" type="radio" value="PRT"/>
+			<label for="location_pt"><div  id="LOCATION_016">Portugal</div></label>
+			<input id="location_fi" name="location" type="radio" value="FIN"/>
+			<label for="location_fi"><div  id="LOCATION_017">Suomi</div></label>
+			<input id="location_hu" name="location" type="radio" value="HUN"/>
+			<label for="location_hu"><div  id="LOCATION_018">Magyarországon</div></label>
+		</fieldset>
+		</div>
+		<div data-role="fieldcontain">
+			<input id="locationselect_ok" type="button" value="OK" />
+		</div>
+	</div>
+</div>
+</body>
+</html>

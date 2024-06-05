@@ -1,0 +1,5 @@
+# These are resources that are used for all SKUs, all hardware etc.
+
+soundfiles|soundfiles
+mmconfig|mmConfig.json
+timezonedatabase|geo.dat

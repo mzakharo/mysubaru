@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>UIE Microserver Sample</title>
+<style type="text/css">
+body { margin: 10px; padding: 0; color: #4D4B43; font-family: Helvetica, Arial, sans-serif; font-size: 12pt;}
+h1,h2 { color: #33322C; font-weight: normal; }
+h1 { font-weight: normal; background-color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14pt; }
+h2 { font-size: 12pt; }
+p { font-size: 10pt; }
+textarea.code { border: 1px #666666 solid; width: 300px; height: 80px; resize: none; }
+input.run { display: block; border: 1px #cccccc solid; box-shadow: 1px 1px 1px #666; margin-top: 2px; }
+input.run:hover { cursor: pointer; }
+</style>
+<script type="text/javascript" src="js/microserver.js"></script>
+<script type="text/javascript">
+// Get the port number of local Microserver.
+var microserver = UIEMicroserver.getInstance();
+
+function run(code_id) {
+  var node = document.getElementById(code_id);
+  eval(node.value);
+}
+
+</script>
+</head>
+<body>
+<h1>UIE Microserver Library</h1>
+<p>This Java Script library provides bridge to the native UIE Microserver Library on the handset device.</p>
+<p>Latest version: 2.0.0</p>
+
+<h1>Handling Microserver events</h1>
+<p>Handling Bluetooth events is supported by onEvent method, Microserver will notify when Bluetooth is either connected or disconnected.</p>
+<textarea id="onEvent" class="code">
+var microserver = UIEMicroserver.getInstance();
+microserver.onEvent(function(event, state) {
+  if (event == UIEMicroserver.EV_TETHER_STATE) {
+     var connection = (UIEMicroserver.CONNECTED == state)? "Connected" : "Disconnected";
+     alert("Connection status changed, " + connection);
+  }
+});
+alert("Set callback function.");
+</textarea>
+<input class="run" type="button" value="run" onclick="run('onEvent')"/>
+
+<h1>Get the connection status.</h1>
+<p>Get the current connection status of Microserver.</p>
+<textarea id="getStatus" class="code">
+var microserver = UIEMicroserver.getInstance();
+microserver.getStatus(function(state) {
+  if (state == UIEMicroserver.CONNECTED) {
+    alert("Microserver is connected!");
+  } else {
+    alert("Microserver is disconnected!");
+  }
+});
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getStatus')"/>
+
+<h1>Getting timestamp</h1>
+<p>Get the current timestamp by using HTTP request to local Micoserver.</p>
+<textarea id="getTimestamp" class="code">
+  var xhr = new XMLHttpRequest();
+  var endpoint = ["http://127.0.0.1:", window.MICROSERVER_PORT, '/timestamp/', Math.random()].join('');
+  xhr.open("GET", endpoint);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        alert(xhr.responseText);
+      } else {
+        alert("error response " + xhr.status);
+      }
+    }
+  }
+  xhr.send();
+</textarea>
+<input class="run" type="button" value="run" onclick="run('getTimestamp')"/>
+
+<p><a href="index.html">Go Back</a></p>
+<br/>
+<br/>
+<br/>
+<br/>
+<script type="text/javascript">
+// Get the local server port.
+microserver.getLocalServerPort(function(port) {
+  window.MICROSERVER_PORT = port;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties version="1.0">
+
+    <entry key="UseStagingApiKey">1</entry>
+
+    <entry key="AuthServer">https://auth.staging.cloudmade.com/</entry>
+    <entry key="UnifiedSearchServer">http://unifiedsearch.staging.cloudmade.com:80/</entry>
+    <entry key="LicensingServer">https://licensingserver.magellangps.com/staging/api.php</entry>
+    <entry key="ResourcesServer">https://licensingserver.magellangps.com/</entry>
+    <entry key="TrafficTANAServer">http://traffic.navman.co.nz:80/RoadTrafficTANA/tile.php</entry>
+    <entry key="TrafficNVNAServer">http://traffic.navman.co.nz:80/RoadTraffic/tile.php</entry>
+    <entry key="TrafficOCServer">http://traffic.navman.co.nz:80/RoadTrafficOC/tile.php</entry>
+    <entry key="OffboardServer">http://stage-offboardmap.magellangps.com/</entry>
+    <entry key="GeocodingServer">http://stagegeocode.magellangps.com:80/geocodeserviceoffboard/geocode.asmx</entry>
+    <entry key="NetsuiteServer">https://checkout.sandbox.netsuite.com/app/site/backend/passwordretrieval.nl?c=1142057&amp;sc=1&amp;whence=&amp;n=4&amp;login=T&amp;viewHint=F&amp;forgotPasswd=T</entry>
+    <entry key="MapsafeServer">https://mapsafe.staging.cloudmade.com/</entry>
+    <entry key="SmartDataServer">https://smartdata-feeder-magellan.staging.cloudmade.com/</entry>
+    <entry key="OTAServer">http://mgngps-prod-smartgps.s3.amazonaws.com/</entry>
+    <entry key="RedboxServer">http://www.redbox.com</entry>
+    <entry key="TrapsterServer">https://alerts.cc.api.here.com/alerts/1.0/search.json</entry>
+    <entry key="KWSServer">http://stagegeocode.magellangps.com/geocodeserviceoffboard/geocode.asmx/KeywordSearch?AuthKey=34JTI9205J89</entry>
+    <entry key="VMSServer">http://stage-mapview.magellangps.com/xsm/tile?</entry>
+    <entry key="UDSAServer">http://stage-orv-mediadb.magellangps.com/api/profile/</entry>
+    
+    <entry key="HeadUnitAPPServer">http://stage-offboardmap.magellangps.com/HeadUnitAPP/MGWS_53/</entry>
+    <entry key="MapUpdateServer">http://stage-orv-mediadb.magellangps.com/api/v1/mapupdate.json</entry>
+    
+</properties>
+

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Launcher</title>
+		<style type="text/css">
+			body{
+			    width: 100%;
+				background:#000;
+    			background-repeat: no-repeat;
+    			overflow: hidden;
+    			-webkit-user-select: none;
+			}
+			input.closebtn {
+			    position :absolute;
+            	top :20px;
+            	left :650px;
+            	height: 50px;
+            	width :120px;
+            	border-radius: 1em;
+            	font-size: x-large;
+            	font-weight: bold;
+			}
+			p.strtitle {
+			    font-weight: bold;
+			    font-size: xx-large;
+			    color: #FFFFFF;
+			    align: left;
+			    margin-top: 10px;
+			    margin-left: 20px;
+			}
+			p.strsent {
+			    font-weight: bold;
+			    font-size: x-large;
+			    color: #FFFFFF;
+			    align: left;
+			    margin-top: 30px;
+			    margin-left: 20px;
+			}
+		</style>
+		<script>
+			var jse;
+			onload = function(){
+				var plugin = document.getElementById( "plugin" );
+				jse = plugin.NaviNativeAPI( 2 );
+				jse.setParam( 0x4001, "", "", "", "" );
+			}
+			
+			function tabclose(){
+				jse.setParam( 0x4007, "1", "0", "", "" );
+			}
+		</script>
+	</head>
+	<body marginheight="0" marginwidth="0">
+		<p class="strtitle">Error</p>
+		<input type="button" class="closebtn" name="closebtn" value="Close" onclick='tabclose()'>
+		<p class="strsent">Policy Error</p>
+		<object type="application/NaviNativeAPI" id="plugin" width="0" height="0"></object>
+	</body>
+</html>

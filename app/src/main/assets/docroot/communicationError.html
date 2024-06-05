@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>network error</title>
+        <script>
+            var isFinishAWSServerAlive=false;
+            var isFinishContentsLoad=false;
+            var isAWSServerAlive=false;
+            var htmlAWS;
+
+            checkAWSServerAlive(function(isSuccess,code,data){
+                isFinishAWSServerAlive=true;
+                isAWSServerAlive=isSuccess;
+                htmlAWS=data;
+                jump();
+            });
+
+            onload = function(){
+                isFinishContentsLoad=true;
+                jump();
+            }
+                
+            function checkAWSServerAlive (callback){
+                var xhr = new XMLHttpRequest();
+                var	timeoutAWS = window.setTimeout(
+                function(){
+                    xhr.abort();
+                    callback("");
+                },5000);
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        window.clearTimeout(timeoutAWS);
+                        if(xhr.status == 200){
+                            callback(true,"sccess",xhr.responseText);
+                        }
+                        else{
+                            callback(false,"server_error",null);
+                        }
+                    }
+                };
+                xhr.open("POST","https://hchk.smt-access.com/app/launcher/index.html",true);
+                xhr.setRequestHeader("Content-Type","text/plain");
+                try{
+                    xhr.send(null);
+                }
+                catch(e){
+                    window.clearTimeout(timeoutAWS);
+                    xhr.abort();
+                    callback(false,"exception",null);
+                }
+            }
+        
+            function jump(){
+                if(isFinishAWSServerAlive && isFinishContentsLoad){
+                    if(isAWSServerAlive){//Internet:OK
+                        document.open();
+                        document.write(htmlAWS);
+                        document.close();
+                        return;
+                    }
+                    else{//Internet:NG
+                        return;
+                    }
+                }
+            }
+        </script>
+		<style>
+            html,
+            body {
+                user-select: none;
+                height: 100%;
+                margin: 0px;
+                user-select: none;
+                -webkit-user-select: none;
+                font-family: Helvetica,Arial,sans-serif;
+                background-color:rgba(0,0,0,1);
+                background: linear-gradient(#606060,#303030);
+            }
+            div {
+            	font-size: 16px;
+            	color: #ffffff;
+            	box-sizing:border-box;
+            	text-align: center;
+            	width:100%;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+            .divButton {
+            	position: fixed;
+            	bottom:0;
+            	left:0;
+            	right:0;
+            	height:80px;
+            	background-color:rgba(0,0,0,0.3);
+            }
+            .divButton:active {
+            	background-color:rgba(220,220,220,0.3);
+            }
+		</style>
+	</head>
+	<body>
+        <div style="font-size:30px;position: absolute; top:50px;">Communication error</div>
+        <div style="position: absolute; top:110px;padding:10px;">Communication with server was disconnected.
+            </br>
+            Try again after confirming communications environment.</div>
+	</body>
+</html>

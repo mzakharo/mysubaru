@@ -1,0 +1,103 @@
+# Must follow the order the enum SafetyAlert::Type.
+#
+# Columns are:
+#  1. point rule
+#  2. allow freeway
+#  3. priority: 0-65535, 0 means disabled, 1 is least important, 65535 is most important
+#     Alerts with the same priority will be prioritised by lowest distance.
+#     Alerts with priority <= 5 are only displayed at lower zoom levels
+#  4. initial time (seconds) for point rules, distance (metres) for area rules
+#  5. repeat (metres for point rules, seconds for area rules)
+#  6. deactivation delay (seconds, free driving mode only)
+#  7. speed limit threshold (percentage, 0 indicates "trigger always")
+#  8. shelf life (minutes, time before refreshing from the server)
+#  9. expiry (minutes, time before deleting from the database)
+# 10. true to take the heading into consideration, false to ignore the heading
+#
+# 1     2     3    4     5    6    7    8        9    10
+true, false,  6,  20,  107,  5,   0, 10080, 5256000,  true   # TYPE_RED_LIGHT
+true, false, 10,  20,  107,  5,   0, 10080,  120960,  true   # TYPE_RED_LIGHT_AND_SPEED
+true, true,   7,  20,  107,  5,  80, 10080, 5256000,  true   # TYPE_SPEED_FIXED
+true, true,   9,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_MOBILE
+true, true,   9,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_KNOWN_MOBILE
+true, true,   8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_COP_CAR
+true, true,   8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_COP_MOTORCYCLE
+true, true,   8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_LIVE_POLICE
+true, true,   8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_KNOWN_ENFORCEMENT
+true, false,  8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_TRAP_SCHOOL_ZONE
+true, true,   8,  20,  107,  5,  80,    60,     720,  true   # TYPE_SPEED_TRAP_CONSTRUCTION
+true, true,   8,  20,  107,  5,  80,   720,    1440,  true   # TYPE_SPEED_AVERAGE
+true, true,   6,  20,  107,  5,  50,   720,    1440,  true   # TYPE_SPEED_CHECK
+true, false,  0,  1609, 805, 15,  0,    60,     720,  false  # Disabled - TYPE_DUI
+true, false,  4,  20,  107,  5,   0, 10080,  120960,  true   # TYPE_RAILROAD_CROSSING
+true, true,   3,  20,  152, 10,   0, 10080,  120960,  true   # TYPE_ACCIDENT_BLACKSPOT
+true, true,   2,  20,   76,  5,   0, 10080,  120960,  true   # TYPE_DANGEROUS_CURVE
+false,false,  5,  250,  30,  5,  50, 10080,  120960,  false  # TYPE_SCHOOL_ZONE  
+true, false,  8,  20,  107,  5,  50,   720,    1440,  true   # TYPE_SCHOOL_ZONE_POINT
+true, false,  1,  10,   76,  5,   0, 10080,  120960,  true   # TYPE_SPEED_BUMP
+true, false,  4,  127, 107,  5,   0,   720,    1440,  true   # TYPE_EV_CHARGING
+true, true,   6,  20,  107,  5,   0,     5,      60,  true   # TYPE_ROAD_HAZARD
+true, false,  4,  20,  107,  5,   0,     5,     120,  true   # TYPE_CHILDREN_PLAYING
+true, true,   4,  67,  107,  5,   0,     5,     120,  true   # TYPE_ACCIDENT
+true, true,   4,  67,  107,  5,   0,     5,     120,  true   # TYPE_TRAFFIC_JAM
+true, true,   4,  67,  107,  5,   0,     5,     240,  true   # TYPE_CONSTRUCTION_ZONE
+false,true,   9,  2000, 60, 15,   0,     5,     360,  true   # TYPE_BUSH_FIRE
+true, true,   6,  127, 107,  5,   0,     5,     360,  true   # TYPE_FLOODED_ROAD
+true, true,   6,  20,  107,  5,   0,     5,     240,  true   # TYPE_ICE_HAZARD
+true, false,  6,  20,  107,  5,   0,   720,    1440,  true   # TYPE_NARROW_BRIDGE
+true, true,   4,  127, 107,  5,   0,     5,     360,  true   # TYPE_ROAD_CLOSED
+true, true,   4,  20,  107,  5,   0,     5,     360,  true   # TYPE_ROAD_KILL
+true, true,   4,  20,  107,  5,   0,   720,    1440,  true   # TYPE_TOLL_BOOTH
+false,true,1000,  5000, 30,  5,   0,   720,    1440, false   # TYPE_AMBER_ALERT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_START_OF_NO_OVERTAKING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_END_OF_NO_OVERTAKING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE_RIGHT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_PROTECTED_OVERTAKING_EXTRA_LANE_LEFT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_LANE_MERGE_RIGHT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_LANE_MERGE_LEFT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_LANE_MERGE_CENTRE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_RAILWAY_CROSSING_PROTECTED
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_RAILWAY_CROSSING_UNPROTECTED
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_ROAD_NARROWS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_SHARP_CURVE_LEFT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_SHARP_CURVE_RIGHT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_WINDING_ROAD_STARTING_LEFT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_WINDING_ROAD_STARTING_RIGHT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_START_OF_NO_OVERTAKING_TRUCKS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_END_OF_NO_OVERTAKING_TRUCKS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_STEEP_HILL_UPWARDS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_STEEP_HILL_DOWNWARDS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_STOP_SIGN
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_LATERAL_WIND
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_GENERAL_WARNING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_RISK_OF_GROUNDING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_GENERAL_CURVE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_END_OF_ALL_RESTRICTIONS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_GENERAL_HILL
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_ANIMAL_CROSSING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_ICY_CONDITIONS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_SLIPPERY_ROAD
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_FALLING_ROCKS
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_SCHOOL_ZONE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_TRAMWAY_CROSSING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_CONGESTION_HAZARD
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_ACCIDENT_HAZARD
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_PRIORITY_OVER_ONCOMING_TRAFFIC
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_YIELD_TO_ONCOMING_TRAFFIC
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_CROSSING_WITH_PRIORITY_FROM_THE_RIGHT
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_PEDESTRIAN_CROSSING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_YIELD
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_NO_ENGINE_BRAKE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_END_OF_NO_ENGINE_BRAKE
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_NO_IDLING
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_TRUCK_ROLLOVER
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_LOW_GEAR
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRAFFIC_SIGN_END_OF_LOW_GEAR
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRUCK_TOLL_BOOTH
+true, true,   0,  20,  107,  5,   0, 10080, 5256000, false   # TYPE_TRUCK_WEIGH_STATION
+false,true,   0,  5000, 30,  5,   0,   720,    1440, false   # TYPE_WEATHER_FLOOD
+false,true,   0,  5000, 30,  5,   0,   720,    1440, false   # TYPE_WEATHER_TROPICAL
+false,true,   0,  5000, 30,  5,   0,   720,    1440, false   # TYPE_WEATHER_WINTER
+false,true,   0,  5000, 30,  5,   0,   720,    1440, false   # TYPE_WEATHER_MARINE
+false,true,   0,  5000, 30,  5,   0,   720,    1440, false   # TYPE_WEATHER_HIGH_WIND

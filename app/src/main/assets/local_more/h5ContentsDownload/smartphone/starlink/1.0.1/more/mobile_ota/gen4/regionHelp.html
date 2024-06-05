@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script>
+		if (navigator.serviceWorker) {
+			//(1)Service Workerのインストール
+			navigator.serviceWorker.register('./js/service-worker.js', { scope: '.' });
+			//(2)マニュフェストに変更があれば、Service Worker側でリソースの再キャッシュを行う
+			if (navigator.onLine) {
+				fetch("/gen4.appcache");
+			}
+		}
+	</script>
+	
+	<script type="text/javascript" src="../mota_loader.js"></script>
+	<script type="text/javascript">
+		MOtaLoader.loadGen4(function(){
+			MOtaLoader.loadScript('./js/regionHelpPageManager.js');
+		});
+	</script>
+	<style type="text/css">
+		body {
+			overflow-y:scroll;
+			-webkit-user-select:none;
+			 -khtml-user-select:none;
+			   -moz-user-select:none;
+				-ms-user-select:none;
+				 -o-user-select:none;
+					user-select:none;
+		}
+
+		a {
+			-webkit-touch-callout:none;
+		}
+		.ui-btn-inner{
+			white-space: normal;
+		}
+	</style>
+
+</head>
+<body>
+<div id="help_list" data-role="page" data-title="Region Setting Info">
+	<div data-role="header" data-position="fixed" style="width: 100%; min-width: 320px;">
+		<h1 id="helpPageTitle"></h1>
+		<a href="#" data-role="button" data-ajax="false" data-theme="a" data-icon="back" id="back"><div id="Car_TXT_0056_3">BACK</div></a>
+	</div>
+	<div data-role="content">
+		<p><h4 id="helpTitle"></h4></p>
+		<Hr>
+			<div id="howToUse" class="harman-ota-regionHelp-text"></div>
+			<div id="image_heip"></div>
+			<div id="caution" class="harman-ota-regionHelp-text-small"></div>
+		<div id="OK"></div>
+	</div>
+</div>
+</body>
+</html>

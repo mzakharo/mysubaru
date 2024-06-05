@@ -1,0 +1,694 @@
+@charset "utf-8";
+
+/**
+ * jquery.mobile-1.3.0.min.css のスタイルの無効化
+ */
+div { text-shadow:none; }
+div > a,
+div > a:link,
+div > a:visited,
+div > a:hover,
+div > a:focus {
+	color:black;
+	text-decoration:none;
+}
+
+/*------------------------------------------------
+  Font
+------------------------------------------------*/
+
+@font-face {
+	font-family:DFPGothicP-W5-Nissan;
+	font-style:normal;
+	font-weight:normal;
+	src:local( DFPGothicP-W5-Nissan-1025 );
+}
+
+/*------------------------------------------------
+  Base
+------------------------------------------------*/
+
+body {
+	overflow:hidden;
+	-webkit-touch-callout:none;
+}
+
+body, #wrapper {
+	-webkit-user-select:none;
+	   -moz-user-select:none;
+	        user-select:none;
+}
+
+img { vertical-align:top; }
+
+/*------------------------------------------------
+  Layout
+------------------------------------------------*/
+
+#wrapper {
+	margin:auto;
+	background:left top no-repeat;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	width:800px;
+	height:480px;
+	font-family:DFPGothicP-W5-Nissan, sans-serif;
+}
+#wrapper.bgType0 { background-image:url( "../img/bg/00bg.jpg" ); }
+#wrapper.bgType1 { background-image:url( "../img/bg/01bg.jpg" ); }
+#wrapper.bgType2 { background-image:url( "../img/bg/02bg.jpg" ); }
+#wrapper.bgType3 { background-image:url( "../img/bg/03bg.jpg" ); }
+#wrapper.bgType4 { background-image:url( "../img/bg/04bg.jpg" ); }
+#wrapper.bgType5 { background-image:url( "../img/bg/05bg.jpg" ); }
+#wrapper.bgType6 { background-image:url( "../img/bg/06bg.jpg" ); }
+#wrapper.bgType7 { background-image:url( "../img/bg/07bg.jpg" ); }
+#wrapper.bgType8 { background-image:url( "../img/bg/08bg.jpg" ); }
+#wrapper.bgType9 { background-image:url( "../img/bg/09bg.jpg" ); }
+
+#wrapper.bgType10 { background-image:url( "../img/bg/10bg.jpg" ); }
+#wrapper.bgType11 { background-image:url( "../img/bg/11bg.jpg" ); }
+#wrapper.bgType12 { background-image:url( "../img/bg/12bg.jpg" ); }
+#wrapper.bgType13 { background-image:url( "../img/bg/13bg.jpg" ); }
+#wrapper.bgType14 { background-image:url( "../img/bg/14bg.jpg" ); }
+#wrapper.bgType15 { background-image:url( "../img/bg/15bg.jpg" ); }
+#wrapper.bgType16 { background-image:url( "../img/bg/16bg.jpg" ); }
+#wrapper.bgType17 { background-image:url( "../img/bg/17bg.jpg" ); }
+#wrapper.bgType18 { background-image:url( "../img/bg/18bg.jpg" ); }
+#wrapper.bgType19 { background-image:url( "../img/bg/19bg.jpg" ); }
+
+#wrapper.bgType20 { background-image:url( "../img/bg/20bg.jpg" ); }
+#wrapper.bgType21 { background-image:url( "../img/bg/21bg.jpg" ); }
+#wrapper.bgType22 { background-image:url( "../img/bg/22bg.jpg" ); }
+#wrapper.bgType23 { background-image:url( "../img/bg/23bg.jpg" ); }
+#wrapper.bgType24 { background-image:url( "../img/bg/24bg.jpg" ); }
+#wrapper.bgType25 { background-image:url( "../img/bg/25bg.jpg" ); }
+#wrapper.bgType26 { background-image:url( "../img/bg/26bg.jpg" ); }
+#wrapper.bgType27 { background-image:url( "../img/bg/27bg.jpg" ); }
+#wrapper.bgType28 { background-image:url( "../img/bg/28bg.jpg" ); }
+#wrapper.bgType29 { background-image:url( "../img/bg/29bg.jpg" ); }
+
+#wrapper.bgType30 { background-image:url( "../img/bg/30bg.jpg" ); }
+#wrapper.bgType31 { background-image:url( "../img/bg/31bg.jpg" ); }
+#wrapper.bgType32 { background-image:url( "../img/bg/32bg.jpg" ); }
+#wrapper.bgType33 { background-image:url( "../img/bg/33bg.jpg" ); }
+#wrapper.bgType34 { background-image:url( "../img/bg/34bg.jpg" ); }
+#wrapper.bgType35 { background-image:url( "../img/bg/35bg.jpg" ); }
+#wrapper.bgType36 { background-image:url( "../img/bg/36bg.jpg" ); }
+#wrapper.bgType37 { background-image:url( "../img/bg/37bg.jpg" ); }
+#wrapper.bgType38 { background-image:url( "../img/bg/38bg.jpg" ); }
+#wrapper.bgType39 { background-image:url( "../img/bg/39bg.jpg" ); }
+
+#wrapper.bgType40 { background-image:url( "../img/bg/40bg.jpg" ); }
+#wrapper.bgType41 { background-image:url( "../img/bg/41bg.jpg" ); }
+#wrapper.bgType42 { background-image:url( "../img/bg/42bg.jpg" ); }
+#wrapper.bgType43 { background-image:url( "../img/bg/43bg.jpg" ); }
+#wrapper.bgType44 { background-image:url( "../img/bg/44bg.jpg" ); }
+#wrapper.bgType45 { background-image:url( "../img/bg/45bg.jpg" ); }
+#wrapper.bgType46 { background-image:url( "../img/bg/46bg.jpg" ); }
+#wrapper.bgType47 { background-image:url( "../img/bg/47bg.jpg" ); }
+#wrapper.bgType48 { background-image:url( "../img/bg/48bg.jpg" ); }
+#wrapper.bgType49 { background-image:url( "../img/bg/49bg.jpg" ); }
+
+#header {
+	position:relative;
+	height:74px;
+}
+#contents {
+	position:relative;
+	height:406px;
+}
+
+/**
+ * #waitingView
+ */
+#waitingView {
+/*	background:#000 url( "http://code.jquery.com/mobile/1.3.2/images/ajax-loader.gif" ) center center no-repeat;*/
+/*	background:#000 url( "../../../../jQueryMobile/1.3.2/images/ajax-loader.gif" ) center center no-repeat; */
+	background:#000 url( "../img/ajax-loader.gif" ) center center no-repeat; 
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;/**
+	display:none;/**/
+}
+
+/*------------------------------------------------
+  UI
+------------------------------------------------*/
+
+.uiHeadButton,
+#indicator li,
+.uiPager,
+.insertPos,
+.currentPos { background:url( "../img/ui/sprite.png" ) 0 0 no-repeat; }
+
+/**
+ * Head
+ */
+.uiHeadButton {
+	position:absolute;
+	top:0;
+	left:0;
+	width:139px;
+	height:74px;
+	cursor:pointer;
+}
+#backHome        { background-position:-160px     0; }
+#backHome:active { background-position:-160px -74px; }
+
+#forCar{
+	position:absolute;
+	top:27px;
+	left:161px;
+	text-shadow:2px 2px 0 #000;
+	font-size:32px;
+	color:#FFF;
+}
+
+/**
+ * Indicator
+ */
+#indicator {
+	position:absolute;
+	top:0;
+	right:25px;
+}
+#indicator ul,
+#indicator li { float:left; }
+#indicator ul { overflow:hidden; }
+#indicator li {
+	margin-right:4px;
+	width:32px;
+	height:74px;
+}
+/** Antenna **/
+#indicator #antenna,
+#indicator #antenna.numLv0      { background-position:     0      0; }
+#indicator #antenna.numLv1      { background-position:     0  -74px; }
+#indicator #antenna.numLv2      { background-position:     0 -148px; }
+#indicator #antenna.numLv3      { background-position:     0 -222px; }
+#indicator #antenna.numLv4      { background-position:     0 -296px; }
+/** Wifi **/
+#indicator #wifi,
+#indicator #wifi.numLv0         { background-position: -32px      0; }
+#indicator #wifi.numLv1         { background-position: -32px  -74px; }
+#indicator #wifi.numLv2         { background-position: -32px -148px; }
+#indicator #wifi.numLv3         { background-position: -32px -222px; }
+#indicator #wifi.numLv4         { background-position: -32px -296px; }
+/** Bluetooth **/
+#indicator #bluetooth,
+#indicator #bluetooth.numLv0    { background-position: -64px      0; }
+#indicator #bluetooth.numLv1    { background-position: -64px  -74px; }
+#indicator #bluetooth.numLv2    { background-position: -64px -148px; }
+/** Battery - horizontal **/
+#indicator #battery.dirX,
+#indicator #battery.dirX.numLv0 { background-position: -96px      0; }
+#indicator #battery.dirX.numLv1 { background-position: -96px  -74px; }
+#indicator #battery.dirX.numLv2 { background-position: -96px -148px; }
+#indicator #battery.dirX.numLv3 { background-position: -96px -222px; }
+/** Battery - vertical **/
+#indicator #battery.dirY,
+#indicator #battery.dirY.numLv0 { background-position:-128px      0; }
+#indicator #battery.dirY.numLv1 { background-position:-128px  -74px; }
+#indicator #battery.dirY.numLv2 { background-position:-128px -148px; }
+#indicator #battery.dirY.numLv3 { background-position:-128px -222px; }
+
+#clock {
+	margin-left:20px;
+	background-position:-564px 0;
+	position:relative;
+	width:106px;
+	height:74px;
+	float:left;
+	line-height:65px;
+	text-align:center;
+	text-shadow:2px 2px 0 #000;
+	font-size:44px;
+	color:#FFF;
+}
+
+/**
+ * Pager
+ */
+.uiPager {
+	position:absolute;
+	top:150px;
+	width:64px;
+	height:64px;
+	text-align:center;
+	cursor:pointer;
+}
+#prevPage        { left:18px; }
+#nextPage        { right:18px; }
+#prevPage        { background-position:-411px     0; }
+#prevPage:active { background-position:-411px -64px; }
+#nextPage        { background-position:-475px     0; }
+#nextPage:active { background-position:-475px -64px; }
+
+/**
+ * Scroller
+ */
+#scrollBar {
+	margin:-40px 100px 0;
+	height:36px;
+}
+#slider {
+	padding:15px 0;
+	position:relative;
+	height:6px;
+	cursor:pointer;
+}
+#slider:before,
+#slideBarL,
+#slideBarM,
+#slideBarR {
+	position:absolute;
+	height:6px;
+}
+#slider:before {
+	background-color:#414141;
+	width:100%;
+	content:"";
+}
+#slideBarL,
+#slideBarM,
+#slideBarR { background-color:#6D6D6D; }
+#slideBarL,
+#slideBarR { width:6px; }
+
+/*------------------------------------------------
+  Launcher
+------------------------------------------------*/
+
+/**
+ * Gadget
+ */
+#gadgetViewport {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+}
+#gadget {
+	position:relative;
+	height:100%;
+}
+
+/**
+ * 
+ */
+.movable {
+	position:absolute;
+	cursor:move;
+}
+
+/**
+ * 
+ */
+.appTouch,
+.appMask {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+.appTouch:active { background-color:rgba( 255, 255, 255, 0.3 ); }
+.appMask { background-color:rgba( 0, 0, 0, 0.3 ); }
+
+/**
+ * 
+ */
+.insertPos,
+.currentPos {
+	position:absolute;
+	width:112px;
+	height:82px;
+	cursor:pointer;
+}
+.insertPos  { background-position:-299px     0; }
+.currentPos { background-position:-299px -82px; }
+.thumbBalloon {
+	position:absolute;
+	left:35px;
+	top:15px;
+	width:43px;
+	height:46px;
+}
+
+/**
+ * Unit Application
+ */
+.unitApp {
+	border:1px solid rgba( 255, 255, 255, 0.3 );
+	background-color:transparent;
+	height:154px !important;
+	overflow:hidden;
+}
+.typeSimpleApp { width:143px !important; }
+.typeWidgetApp { width:294px !important; }
+.typeSimpleApp .appName {
+	padding:10px 8px;
+	background-color:rgba( 0, 0, 0, 0.4 );
+	position:absolute;
+	bottom:0;
+	width:133px;
+	height:23px;
+	font-size:23px;
+	color:#FFF;
+}
+
+/*------------------------------------------------
+  Apps
+------------------------------------------------*/
+
+/**
+ * WidgetApp - Clock
+ */
+#app5 {
+	border:none;
+	background:url( "../img/app5/sprite.gif" ) 0 0 no-repeat;
+	width:296px !important;
+	height:156px !important;
+	color:#FFF;
+}
+#app5 .clock,
+#app5 .year,
+#app5 .date,
+#app5 .day {
+	position:absolute;
+	color:#FFF;
+}
+#app5 .clock {
+	left:20px;
+	top:28px;
+	width:173px;
+	height:58px;
+	line-height:0.85;
+	text-align:center;
+	font-size:70px;
+}
+#app5 .year,
+#app5 .date {
+	right:19px;
+	font-size:28px;
+}
+#app5 .year { top:25px; }
+#app5 .date { top:54px; }
+#app5 .day {
+	margin-left:135px;
+	top:108px;
+	left:16px;
+	width:130px;
+	height:26px;
+	float:right;
+	text-align:right;
+	font-weight:bold;
+	font-size:23px;
+}
+#app5 .day:before {
+	margin:-3px 0 0 -135px;
+	border-top:1px solid #FFF;
+	width:265px;
+	display:block;
+	content:"";
+}
+
+/** Background **/
+#app5.bgType0 { background-position:0      0; }
+/*
+#app5.bgType1 { background-position:0 -156px; }
+#app5.bgType2 { background-position:0 -312px; }
+#app5.bgType3 { background-position:0 -468px; }
+#app5.bgType4 { background-position:0 -624px; }
+*/
+#app5.bgType1 { background-position:0      0; }
+#app5.bgType2 { background-position:0      0; }
+#app5.bgType3 { background-position:0      0; }
+#app5.bgType4 { background-position:0      0; }
+
+/**
+ * WidgetApp - Calendar
+ */
+#app6,
+#app6 .time .clockFrom,
+#app6 .time .clockTo { background:url( "../img/app6/sprite.gif" ) 0 0 no-repeat; }
+#app6 {
+	background-position:-1px -1px;
+	color:#868686;
+}
+#app6 .date,
+#app6 .day,
+#app6 .time,
+#app6 .schedule { position:absolute; }
+#app6 .date,
+#app6 .day { left:20px; }
+#app6 .date {
+	top:10px;
+	width:110px;
+	text-align:center;
+	font-size:40px;
+}
+#app6 .day {
+	top:56px;
+	width:110px;
+	height:26px;
+	text-align:center;
+	font-weight:bold;
+	font-size:21px;
+}
+#app6 .time {
+	top:10px;
+	left:144px;
+	width:150px;
+	height:75px;
+	font-size:30px;
+}
+#app6 .time:before {
+	margin:5px 0 0 -1px;
+	border-left:1px solid #A1A1A1;
+	height:65px;
+	display:block;
+	content:"";
+}
+#app6.noschedule .time { display:none; }
+#app6 .time .clockFrom,
+#app6 .time .clockTo {
+	position:absolute;
+	width:106px;
+	line-height:1;
+}
+#app6 .time .clockFrom {
+	background-position:    0 -156px;
+	top:11px;
+	left:17px;
+	text-align:left;
+}
+#app6 .time .clockTo {
+	background-position:-78px -156px;
+	top:42px;
+	right:17px;
+	text-align:right;
+}
+#app6 .schedule {
+	top:92px;
+	left:20px;
+	width:258px;
+	line-height:63px;
+	font-size:23px;
+}
+
+/**
+ * WidgetApp - Weather
+ */
+#app7,
+#app7 .weather .weatherIcon { background:url( "../img/app7/sprite.gif" ) 0 0 no-repeat; }
+#app7 { 
+	border:none;
+	background-position:-1px -1px;
+}
+#app7 .temperature,
+#app7 .weather {
+	position:absolute;
+	overflow:hidden;
+	width:120px;
+	height:126px;
+	color:#FFF;
+}
+#app7 .temperature {
+	left:20px;
+	top:15px;
+}
+#app7 .temperature .location,
+#app7 .location .txt { height:50px; }
+#app7 .temperature .location {
+	overflow:hidden;
+	line-height:1.1;
+	font-size:23px;
+}
+#app7 .temperature .degrees {
+	position:relative;
+	height:72px;
+}
+#app7 .location .txt {
+	display:table-cell;
+	vertical-align:middle;
+}
+#app7 .degrees .num,
+#app7 .degrees .sign {
+	position:absolute;
+	top:0;
+}
+#app7 .degrees .num {
+	left:5px;
+	width:80px;
+	text-align:center;
+	font-size:60px;
+}
+#app7 .degrees .sign {
+	right:0;
+	font-size:35px;
+}
+#app7 .weather {
+	right:20px;
+	top:15px;
+}
+#app7 .weatherName,
+#app7 .weatherIcon { text-align:center; }
+#app7 .weatherName {
+	height:50px;
+	overflow:hidden;
+	line-height:1.1;
+	font-size:23px;
+}
+#app7 .weatherName .txt {
+	display:table-cell;
+	width:120px;
+	height:50px;
+	vertical-align:middle;
+}
+#app7 .weatherIcon {
+	display:block;
+	width:120px;
+	height:78px;
+}
+/** Weather Icons **/
+#app7 .weather .weatherIcon        { background-position:120px    78px; }
+#app7 .weather .icoSunnyDay        { background-position:    0  -156px; } #app7 .weather .icoSunnyNight        { background-position:-120px -156px; }
+#app7 .weather .icoMostlySunnyDay  { background-position:    0  -234px; } #app7 .weather .icoMostlySunnyNight  { background-position:-120px -234px; }
+#app7 .weather .icoMostlyCloudyDay { background-position:    0  -312px; } #app7 .weather .icoMostlyCloudyNight { background-position:-120px -312px; }
+#app7 .weather .icoHazyDay         { background-position:    0  -390px; } #app7 .weather .icoHazyNight         { background-position:-120px -390px; }
+#app7 .weather .icoCloudy          { background-position:    0  -468px; }
+#app7 .weather .icoRain            { background-position:    0  -546px; }
+#app7 .weather .icoFlurries        { background-position:    0  -624px; }
+#app7 .weather .icoSnow            { background-position:    0  -702px; }
+#app7 .weather .icoSleet           { background-position:    0  -780px; }
+#app7 .weather .icoFreezingRain    { background-position:    0  -858px; }
+#app7 .weather .icoThunderStorm    { background-position:    0  -936px; }
+#app7 .weather .icoFog             { background-position:    0 -1014px; }
+
+/**
+ * WidgetApp - Music Player
+ */
+#app8,
+#app8 .jacketThumb,
+#app8 .artistName,
+#app8 .albumName,
+#app8 .musicTitle { background:url( "../img/app8/sprite.gif" ) 0 0 no-repeat; }
+#app8 {
+	background-position:-1px -1px;
+	color:#FFF;
+}
+#app8 .jacketThumb,
+#app8 .artistName,
+#app8 .albumName,
+#app8 .musicTitle {
+	position:absolute;
+	overflow:hidden;
+}
+#app8 .jacketThumb {
+	padding:4px;
+	background-position:-296px 0;
+	top:14px;
+	left:18px;
+	width:59px;
+	height:59px;
+	overflow:hidden;
+}
+#app8 .artistName,
+#app8 .albumName,
+#app8 .musicTitle { padding-left:30px; }
+#app8 .artistName,
+#app8 .albumName {
+	left:90px;
+	width:165px;
+	height:26px;
+	font-size:23px;
+}
+#app8 .artistName {
+	background-position:-363px 0;
+	top:20px;
+}
+#app8 .albumName {
+	background-position:-363px -52px;
+	top:50px;
+}
+#app8 .musicTitle {
+	background-position:-363px -102px;
+	top:100px;
+	left:15px;
+	width:240px;
+	font-size:26px;
+}
+
+/*------------------------------------------------
+  Debug
+------------------------------------------------*/
+/*
+.areaDebug #header { background-color:rgba( 0, 0, 0, 0.5 ); }
+
+.areaDebug .uiHeadButton { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug #indicator li,
+.areaDebug #indicator #clock,
+.areaDebug #clock .digit10,
+.areaDebug #clock .digit1 { background-color:rgba( 0, 0, 0, 0.5 ); }
+
+.areaDebug .uiPager { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug #scrollBar { background-color:rgba( 0, 0, 0, 0.5 ); }
+.areaDebug #slider    { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug #gadgetViewport { background-color:rgba( 0, 0, 0, 0.5 ); }
+.areaDebug #gadget         { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug .unitApp { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug .insertPos,
+.areaDebug .currentPos { background-color:rgba( 255, 128, 128, 0.5 ); }
+
+.areaDebug #app5 .clock,
+.areaDebug #app5 .digit10,
+.areaDebug #app5 .digit1,
+.areaDebug #app5 .year,
+.areaDebug #app5 .date,
+.areaDebug #app5 .day { background-color:rgba( 0, 0, 0, 0.5 ); }
+
+.areaDebug #app6 .date,
+.areaDebug #app6 .clockFrom,
+.areaDebug #app6 .clockTo,
+.areaDebug #app6 .schedule { background-color:rgba( 0, 0, 0, 0.5 ); }
+
+.areaDebug #app7 .temperature,
+.areaDebug #app7 .weather,
+.areaDebug #app7 .location,
+.areaDebug #app7 .weatherName { background-color:rgba( 0, 0, 0, 0.5 ); }
+
+.areaDebug #app8 .artistName,
+.areaDebug #app8 .albumName,
+.areaDebug #app8 .musicTitle { background-color:rgba( 0, 0, 0, 0.5 ); }
+*/

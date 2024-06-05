@@ -1,0 +1,16 @@
+# Resource list for iPhone 3GS-sized screens
+
+# maps
+resourcelist|maplist.txt
+
+# drawres
+drawres|../maps/drawRes.xml
+
+# common resources
+resourcelist|commonresources.txt
+
+# safety alert resources
+safetyconfig|SafetyAlertRules.csv
+safetyconfiglongdistance|SafetyAlertRules-LongDistance.csv 
+
+

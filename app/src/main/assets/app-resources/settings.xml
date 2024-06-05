@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+
+    <!-- Substring, which should be cut from the begining requested URL (changed to remote serverName) -->
+    <entry key="prefix">/magellan/</entry>
+ 
+    <!-- Specified folder with NMEA log files to play. This folder should be located in Android/Data/com.clarion.test.mws/files folder  -->
+    <entry key="GPSLogFolder">GPSLogs</entry>
+                
+    <!-- Quantity of the interpolated positions -->
+    <entry key="interpolatedPosCount">8</entry>
+    
+    <!-- Time offset between interpolated positions in ms -->
+    <entry key="interpolatedPosOffset">250</entry>
+    
+
+</properties>
+

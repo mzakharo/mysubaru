@@ -1,0 +1,42 @@
+package com.subaru.global.infotainment.gen2.harman.enumerate;
+
+import com.uievolution.localplayback.IMediaPlayerResponse;
+
+/* loaded from: classes.dex */
+public enum HarmanAPI {
+    REQ_RETRIEVE_AVAILABLE_MAP_REGION("00"),
+    REQ_START_DOWNLOAD("01"),
+    REQ_CANCEL_DOWNLOAD("02"),
+    REQ_DELETE_REGION("03"),
+    REQ_INFORM_AUTO_DOWNLOAD_STATUS("04"),
+    REQ_INFORM_AUTO_UPDATE_STATUS("05"),
+    REQ_MAP_SUBSCRIPTION_DETAILS("06"),
+    REQ_ACCESSORY_FILE_TRANSFER_PROGRESS("07"),
+    REQ_REMOVE_DEVICES("08"),
+    NOTIFY_AVAILABLE_MAP_REGIONS("09"),
+    NOTIFY_REGIONS_DOWNLOAD_PROGRESS(IMediaPlayerResponse.IN_PHONE_CALL),
+    NOTIFY_DOWNLOAD_STATUS("11"),
+    NOTIFY_ACCESSORY_FILE_TRANSFER_PROGRESS("12"),
+    NOTIFY_ACCESSORY_TRANSFER_STATUS("13"),
+    NOTIFY_MAP_DATA_DELETE("14"),
+    NOTIFY_NOTIFY_MAP_SUBSCRIPTION_DETAILS("15"),
+    NOTIFY_MAP_SUBSCRIPTION_EXPIRY_STATUS("16"),
+    NOTIFY_ERROR("17"),
+    NOTIFY_ACCESSORY_INFORMATION("18"),
+    NOTIFY_FILE_TRANSFER_FAILURE("24"),
+    QUERY_MAP_UPDATE_FLAG("19"),
+    QUERY_AUTO_UPDATE_FLAG("20"),
+    QUERY_AUTO_DOWNLOAD_FLAG("21"),
+    QUERY_DOWNLOAD_CHANNEL("22"),
+    QUERY_NETWORK_CONNECTIVITY_MODE("23");
+
+    String apiCode;
+
+    HarmanAPI(String str) {
+        this.apiCode = str;
+    }
+
+    public String getApiCode() {
+        return this.apiCode;
+    }
+}

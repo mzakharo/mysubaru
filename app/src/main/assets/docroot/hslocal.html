@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i=0;i<vars.length;i++) {
+					var pair = vars[i].split("=");
+					if (pair[0] == variable) {
+						return pair[1];
+					}
+				}
+			}
+			onload = function(){
+				document.getElementById("post_form").style.display="none";
+				var queryString = getQueryVariable('url');
+				var parser = document.createElement('a');
+				if (queryString == undefined){
+					queryString = sessionStorage.getItem("targetURL");
+				}
+
+				if (queryString != undefined) {
+					parser.href = queryString;
+					if (parser.hostname == 'www.smt-access.com') {
+						document.getElementById("_key").value = "b6d47063196ee813c95675dd69675d5965723a956616a1daa5d6ff6d48669b10";
+						document.getElementById("_secret").value = "69d86c7bced5e7d69afad409d9570bfa14c8c59f821eab732aab5dffc1ebb6ff";
+						document.getElementById("post_form").action = parser.href;
+						document.getElementById("post_form").submit();
+					}
+					else if (parser.hostname == 'tvespa.clarion.co.jp') {
+						document.getElementById("_key").value = "3f882188279e9b0d88ea479d319b230ce2c42bf0c7925c520fb0aec031c1ec0b";
+						document.getElementById("_secret").value = "e377fe81512e7714bece6b7ab287cd5f24f7d32600ec3524e827fd0a0d64c6e4";
+						document.getElementById("post_form").action = parser.href;
+						document.getElementById("post_form").submit();
+					}
+					else if (parser.hostname == 'sach5.clarion.co.jp') {
+						document.getElementById("_key").value = "d38658321ca7afe5ae907aada7f043aad90217533c806d69c55ca07142c6a88f";
+						document.getElementById("_secret").value = "7ead16e3188dc509651850d2bc8961fdef390e81a2b4c3adcd37cfd898a47156";
+						document.getElementById("post_form").action = parser.href;
+						document.getElementById("post_form").submit();
+					}
+					else {
+						location.href = queryString;
+					}
+				}
+				else {
+					alert("parse error");
+					document.getElementById("loader").style.display="none";
+				}
+			}
+		</script>
+		<style>
+		body {
+			background-color: #000000;
+		}
+		.sa-spinner-img {
+			background-image: url(./img/spinner-l.png);
+			margin: 0px;
+			width: 80px;
+			height: 80px;
+			-webkit-animation: sa-spin-anim 1.6s infinite steps(12);
+			-moz-animation: sa-spin-anim 1.6s infinite steps(12);
+			-o-animation: sa-spin-anim 1.6s infinite steps(12);
+			animation: sa-spin-anim 1.6s infinite steps(12);
+		}
+		@-webkit-keyframes sa-spin-anim {
+			100% {
+				-webkit-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
+				-o-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+		.sa-spinner {
+			position: absolute;
+				top: 50%;
+			left: 50%;
+			margin: -40px;
+		}
+		</style>
+	</head>
+
+	<body>
+
+		<form action="index.html" method="POST" id="post_form">
+			<input type="hidden" name="consumer_key" id="_key">
+			<input type="hidden" name="consumer_secret" id="_secret">
+		</form>
+
+		<div class="sa-spinner"><div class="sa-spinner-img"></div></div>
+	</body>
+</html>
+

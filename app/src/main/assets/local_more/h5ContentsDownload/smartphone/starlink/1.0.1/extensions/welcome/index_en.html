@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>STARLINK</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+            user-select: none;
+			-webkit-user-select: none;
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 16px;
+        }
+        
+        #top-index,
+        #top-list {
+            color: #FFFFFF;
+            width: 100%;
+			background-color: #000000;
+            background: url(./img/image/star.png) ,linear-gradient(-15deg, #000000 10%, #000050 20%, #001090 50%, #000050 80%, #000000 90%);
+        }
+        
+        #top-mysubaru,
+        #top-category1,
+        #top-category2,
+        #top-category3,
+        #top-category4,
+        #top-category5 {
+            color: #FFFFFF;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+			background-color: #000000;
+            background: url(./img/image/star.png) ,linear-gradient(180deg, #000000 10%, #000050 40%, #001090 90%, #000050 100%);
+        }
+        
+        .main-cell {
+            border: solid rgba(255, 255, 255, 0.6);
+            border-width: 1px 0px 0px 0px;
+            position: relative;
+        }
+        
+        .cell {
+            height: 80px;
+            width: 100%;
+            border: solid rgba(150, 150, 150, 0.1);
+            border-width: 0px 0px 0px 0px;
+        }
+        
+        .cell-all {
+            height: 156px;
+            width: 100%;
+            border: solid rgba(255, 255, 255, 0.6);
+            border-width: 1px 0px 1px 0px;
+            background-color: rgba(0,0,0,0.6);
+        }
+        
+        .icon {
+            float: left;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 80px;
+            height: 100%;
+        }
+        
+        .icon-m {
+            float: left;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 15.5%;
+            height: 50px;
+            margin: 1px 0 1px 1%;
+        }
+        
+        .celltext {
+            float: left;
+            padding: 24px 0px 15px 15px;
+            box-sizing: border-box;
+            height: 100%;
+			font-size: 21px;
+        }
+        
+        .pageskipicon {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            bottom: 0;
+            width: 15px;
+            background-image: url('./img/image/arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .pageskipicon_bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 35px;
+            background-image: url('./img/image/arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-size:15px;
+        }
+        .sub-page {
+            position: absolute;
+            top: 0;
+        }
+        
+        .Button:active {
+            background-color: #A0A0A0;
+        }
+        
+        .BackgroundCarImage {
+            position: relative;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 150px;
+            background-image: url('./img/image/ground.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        .BackgroundCarImage-f {
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 150px;
+            background-image: url('./img/image/ground.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        
+        .ContentsName {
+            font-size: 36px;
+            width: 100%;
+            text-align: center;
+            padding: 50px 20px 50px 20px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+        
+        .SubContentsName {
+            font-size: 20px;
+            width: 100%;
+            padding: 40px 10px 0px 10px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+        
+        .SubContentsName-m {
+            font-size: 20px;
+            width: 100%;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+        
+        .ContentsSubName {
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+            color: rgb(38, 101, 243);
+        }
+        
+        .DivText {
+            width: 100%;
+            padding: 10px 20px 10px 20px;
+            box-sizing: border-box;
+        }
+        .DivText-m {
+            width: 100%;
+            padding: 10px 10px 10px 10px;
+            box-sizing: border-box;
+        }
+        
+        .JQMButton {
+            height: 50px;
+            margin: 20px 0 20px 0;
+            padding: 12px;
+            box-sizing: border-box;
+            color: #505050;
+            border-radius: 1em;
+            border: 1px solid #044062;
+            text-shadow: 0px 1px 0px #194b7e;
+            background-clip: padding-box;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: rgb(238, 238, 238);
+            background-image: linear-gradient(#fff, #f1f1f1);
+			font-weight: bold;
+        }
+        
+        .JQMButton:active {
+            background-color: rgb(208, 208, 208);
+            background-image: linear-gradient(#e0e0e0, #c1c1c1);
+        }
+        
+        .JQMButtonB {
+            height: 50px;
+            margin: 20px 0 20px 0;
+            padding: 12px;
+            box-sizing: border-box;
+            color: #ffffff;
+            border-radius: 1em;
+            border: 1px solid #044062;
+            text-shadow: 0px 1px 0px #194b7e;
+            background-clip: padding-box;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: rgb(57, 107, 158);
+            background-image: linear-gradient(#5f9cc5, #396b9e);
+			font-weight: bold;
+        }
+        
+        .JQMButtonB:active {
+            background-color: rgb(37, 87, 128);
+            background-image: linear-gradient(#3f6ca5, #093b6e);
+        }
+        
+        .StartButton,
+        .BackButton {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            box-sizing: border-box;
+            background-color: rgb(38, 101, 243);
+            box-shadow: 0px 25px 25px 25px #000000;
+			text-shadow: 1px 1px 3px #090909;
+			font-weight: bold;
+
+        }
+        
+        .BackButton::before {
+            position: absolute;
+            top: 0;
+            left: -15px;
+            content: '';
+            width: 30px;
+            border-color: rgb(29, 54, 101) rgb(38, 101, 243) rgb(29, 54, 101) rgb(29, 54, 101);
+            border-style: solid;
+            border-width: 30px 20px 30px 0;
+        }
+        
+        .BackButton:active::before {
+            border-color: rgb(29, 54, 101) #A0A0A0 rgb(29, 54, 101) rgb(29, 54, 101);
+        }
+
+		.ContentsImageTate {
+			width:100%;
+	        	padding: 5% 20% 5% 20%;
+        		box-sizing: border-box;
+		}
+
+		.ContentsImageYoko {
+			width:100%;
+	        	padding: 5% 5% 5% 5%;
+        		box-sizing: border-box;
+		}
+		
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107564151"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (location.hostname.search(/www.smt-access.com/) != -1) {
+    gtag('config', 'UA-107564151-3');
+  }
+  else{
+    gtag('config', 'UA-107564151-2');
+  }
+</script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="../../common/js/jquery.easing.min.js"></script>
+    <script src="../../common/js/microserver.js"></script>
+    <script src="../../common/js/mwsRequestManager-1.0.2.js"></script>
+	<script src="../../common/js/mysubaru.js"></script>
+</head>
+
+<body>
+    <div id="top" class="main-page">
+
+        <div id="top-index" class="sub-page" style="height:100%">
+            <div id="logo" style="position: relative;
+                        top: 10px;
+                        left: 10%;
+                        width: 80%;
+                        text-align: center;
+                        height: 110px;
+                        background-image: url('./img/image/subarustarlinklogo.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+            "></div>
+            <div class="DivText-m">
+                <div class="DivText-m">
+                You can enjoy a variety of contents.
+                </div>
+            </div>
+            <div class="DivText-m">
+			<div class="SubContentsName-m">App Collection</div>
+            </div>
+            
+            <div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-list','sub-page')">
+                    <div class="cell-all">
+                        <div class="icon-m" style="background-image: url('./img/icon/2.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/3.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/4.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/5.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/6.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/7.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/8.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/9.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/10.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/11.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/12.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/13.gif');">
+                        </div>
+                        <div class="icon-m" style="background-image: url('./img/icon/14.gif');">
+                        </div>
+						<div class="pageskipicon_bg"></div>
+                    </div>
+                    <div class="main-cell"></div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-mysubaru','sub-page');checkMWShttpsState();">
+                    <div class="cell" style="background-color: rgba(0,0,0,0.6);">
+                        <div class="icon" style="background-image: url('./img/icon/ms.png');">
+                        </div>
+                        <div  style="padding: 5px 38px 5px 88px; box-sizing: border-box;">
+                            For Subaru Safety and Security features, please go to the MySubaru App. 
+                        </div>
+                    </div>
+                    <div class="pageskipicon_bg"></div>
+                </div>
+                <div class="main-cell"></div>
+            </div>
+            <br><br><br>
+            <div class="Button StartButton" onclick="window.location.href = 'popupview://welcome/ok?q=en'">
+                <b>Continue</b>
+            </div>
+        </div>
+
+        <div id="top-list" class="sub-page" style="display : none;">
+            <div id="logo" style="position: relative;
+                        top: 10px;
+                        left: 10%;
+                        width: 80%;
+                        text-align: center;
+                        height: 180px;
+                        background-image: url('./img/image/subarustarlinklogo.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+            "></div>
+			<div class="DivText">
+            <div class="DivText">
+                You can enjoy a variety of contents with SUBARU STARLINK in your SUBARU vehicle.
+            </div>
+            <div class="DivText" style="font-size: 14px;padding: 30px 20px 40px 20px;">
+                * Availability of each application depends on your SUBARU vehicle and region.
+            </div>
+			</div>
+            <div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-category2','sub-page')">
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/2.gif');">
+                        </div>
+                        <div class="celltext">
+                            Magellan Navi
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/3.gif');">
+                        </div>
+                        <div class="celltext">
+                            BestParking
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/4.gif');">
+                        </div>
+                        <div class="celltext">
+                            Yelp
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/5.gif');">
+                        </div>
+                        <div class="celltext">
+                            eBird
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/6.gif');">
+                        </div>
+                        <div class="celltext">
+                            eventseeker
+                        </div>
+                    </div>
+                    <div class="pageskipicon"></div>
+                </div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-category3','sub-page')">
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/7.gif');">
+                        </div>
+                        <div class="celltext">Glympse</div>
+                    </div>
+                    <div class="pageskipicon"></div>
+                </div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-category4','sub-page')">
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/8.gif');">
+                        </div>
+                        <div class="celltext">iHeartRadio</div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/9.gif');">
+                        </div>
+                        <div class="celltext">News Radio</div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/10.gif');">
+                        </div>
+                        <div class="celltext">Music</div>
+                    </div>
+                    <div class="pageskipicon"></div>
+                </div>
+                <div class="main-cell Button" onclick="showElementByIdPage('top-category5','sub-page')">
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/11.gif');">
+                        </div>
+                        <div class="celltext">Weather</div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/12.gif');">
+                        </div>
+                        <div class="celltext">Calendar</div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/13.gif');">
+                        </div>
+                        <div class="celltext">News</div>
+                    </div>
+                    <div class="cell">
+                        <div class="icon" style="background-image: url('./img/icon/14.gif');">
+                        </div>
+                        <div class="celltext">Quick Reference Guide</div>
+                    </div>
+                    <div class="pageskipicon"></div>
+                </div>
+                <div class="main-cell"></div>
+            </div>
+            <br><br><br><br>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-index','sub-page')">Back</div>
+        </div>
+
+
+
+        <div id="top-category2" class="sub-page" style="display : none;">
+            <div class="ContentsName">NAVIGATION</br>PLACE SEARCH</div>
+            <div class="DivText">Find and discover places of interest near you with our suite of dedicated applications.</div>
+            <div class="DivText">
+                <div class="SubContentsName">Magellan Navi</div>
+                <div class="DivText">Navigate you to anywhere with a cloud-based navigation with turn-by-turn map guidance.</div>
+                <img src="./img/03/Magellan Navi.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">BestParking</div>
+                <div class="DivText">Find best parking spots near you.</div>
+                <img src="./img/03/BestParking.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">Yelp</div>
+                <div class="DivText">The best local food and more.</div>
+                <img src="./img/03/Yelp.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">eBird</div>
+                <div class="DivText">Discover bird watching hot spots.</div>
+                <img src="./img/03/eBird.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">eventseeker</div>
+                <div class="DivText">Find your favorite events near you.</div>
+                <img src="./img/03/eventseeker.png" class="ContentsImageYoko"></img>
+            </div>
+            <div class="BackgroundCarImage"></div>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-list','sub-page')">Back</div>
+        </div>
+
+
+
+        <div id="top-category3" class="sub-page" style="display : none;">
+            <div class="ContentsName">LOCATION SHARING</div>
+            <div class="DivText">Share your real-time location with your family, friends or co-workers!</div>
+            <div class="DivText">
+                <div class="SubContentsName">Glympse</div>
+                <div class="DivText">Send a Glympse to let friends and family know you are on your way.</div>
+                <img src="./img/04/Glympse.png" class="ContentsImageYoko"></img>
+            </div>
+            <div class="BackgroundCarImage"></div>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-list','sub-page')">Back</div>
+        </div>
+
+
+
+        <div id="top-category4" class="sub-page" style="display : none;">
+            <div class="ContentsName">MUSIC</div>
+            <div class="DivText">Through a variety of popular services, enjoy and discover your favorite music and news sources on the road.</div>
+            <div class="DivText">
+                <div class="SubContentsName">iHeartRadio</div>
+                <div class="DivText">Unlimited music and thousands of radio stations all in one app.</div>
+                <img src="./img/05/iHeartRadio.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">News Radio</div>
+                <div class="DivText">Listen on demand to your favorite contents and podcasts.</div>
+                <img src="./img/05/STITCHER.png" class="ContentsImageYoko"></img>
+                <div class="DivText">* Please log in to your account on the phone app before first launch.</div>
+                <img src="./img/05/account.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">Music</div>
+                <div class="DivText">Play music from your smartphone.</div>
+                <img src="./img/05/MUSIC.png" class="ContentsImageYoko"></img>
+            </div>
+            <div class="BackgroundCarImage"></div>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-list','sub-page')">Back</div>
+        </div>
+
+        <div id="top-category5" class="sub-page" style="display : none;">
+            <div class="ContentsName">INFORMATION</div>
+            <div class="DivText">Up-to-date vehicle guide, news, weather and calendar at your finger tips.</div>
+            <div class="DivText">
+                <div class="SubContentsName">Weather</div>
+                <div class="DivText">Real-time weather and forecasts.</div>
+                <img src="./img/06/Weather.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">Calendar</div>
+                <div class="DivText">Sync up with Google Calendar.</div>
+                <img src="./img/06/Google calendar.png" class="ContentsImageYoko"></img>
+                <div class="DivText">* Please log in to your account on the phone app before first launch.</div>
+                <img src="./img/06/Clander account.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">News</div>
+                <div class="DivText">Stay up to date with the latest news.</div>
+                <img src="./img/06/News.png" class="ContentsImageYoko"></img>
+                <div class="SubContentsName">Quick Reference Guide</div>
+                <div class="DivText">SUBARU vehicles' reference guide.</div>
+                <img src="./img/06/Quick Reference Guide.png" class="ContentsImageYoko"></img>
+            </div>
+            <div class="BackgroundCarImage"></div>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-index','sub-page')">Back</div>
+        </div>
+        
+        <div id="top-mysubaru" class="sub-page" style="display : none; bottom:0px;">
+            
+            <div class="DivText-m">
+            <div class="SubContentsName">MySubaru</div>
+            <br>
+			<div class="DivText-m">
+            <div>
+                <img  src="./img/icon/ms.png" style="height:100px;vertical-align:middle;" onclick='if(!canJumpMySubaru){return;};if(navigator.userAgent.indexOf(" iP")>0){location.href ="https://itunes.apple.com/app/mysubaru/id1005186680?mt=8&urlscheme=mysubaru";}else{location.href ="intent://mysubaru/#Intent;package=com.subaru.telematics.app.remote;end";}'/>
+                
+            </div>
+            <br>
+            To access subscription-based STARLINK Safety and Security features on eligible vehicles, 
+            please open or download the MySubaru Mobile App.  
+            The MySubaru Mobile App can be downloaded from the Apple App Store and Google Play Store.  
+            Please refer to Subaru.com for vehicle eligibility.
+            <div id="mysubaruField" class="JQMButton" style="width:100%;display:none;" onclick='if(!canJumpMySubaru){return;};if(navigator.userAgent.indexOf(" iP")>0){location.href ="https://itunes.apple.com/app/mysubaru/id1005186680?mt=8&urlscheme=mysubaru";}else{location.href ="intent://mysubaru/#Intent;package=com.subaru.telematics.app.remote;end";}'>
+                Go to MySubaru
+            </div>
+			</div>
+
+            <br><br><br>
+            </div>
+            <div class="Button BackButton" onclick="showElementByIdPage('top-index','sub-page')">Back</div>
+        </div>
+        
+
+    </div>
+
+    <script>
+		var skurl = "";
+
+        function showElementByIdPage(showIdName, targetClass) {
+            var element = document.getElementsByClassName(targetClass);
+            if (document.getElementsByClassName(targetClass)) {
+                for (var i = 0; i < element.length; i++) {
+                    element[i].style.visibility = "hidden";
+                    element[i].style.display = "none";
+                }
+            } else {
+                return false;
+            }
+            if (document.getElementById(showIdName)) {
+                document.getElementById(showIdName).style.visibility = "visible";
+                document.getElementById(showIdName).style.display = "block";
+            } else {
+                return false;
+            }
+            window.scrollTo(0, 0);
+            return true;
+        }
+
+		function checkStart(){
+			if( countryCode=="" || countryCode=="null"  || countryCode=="nil" ) {
+            	countryCode = getCountryCcodeFromQuery();
+        	}
+            if( countryCode=="" || countryCode=="null"  || countryCode=="nil" ) {
+                checkMWShttpsState();
+            }
+            checkMySubaru();
+		}
+
+        function checkState(){
+            $.ajax({
+		        type: "GET",
+		        url: skurl,
+		        async: true,
+		        timeout: 5000,
+		        success: function(data,status,xhr){
+		            countryCode = xhr.responseText;
+		            console.log(countryCode);
+		            if( countryCode!="" && countryCode!="null"  && countryCode!="nil" ) {
+			        	clearTimeout(sutimer);
+			        	sutimer = null;
+		                checkMySubaru();
+		            }
+		            else{
+			            setTimeout("checkState()",2000);
+			        }
+			    },
+			    error: function(xhr,status,err){
+			        setTimeout("checkState()",2000);
+			    }
+			});
+		}
+
+		function checkMWShttpsState() {
+			var	kurl	= "https://127.0.0.1:"+ 8443 + "/version";
+			$.ajax({
+				type: "GET",
+				url: kurl,
+				async: true,
+				timeout: 3000,
+				success: function(data,status,xhr){
+                	skurl= "https://127.0.0.1:"+ 8443 + "/kvs/geocode_iso_country_code/";
+					checkState();
+				},
+				error: function(xhr,status,err){
+					checkMWShttps2State();
+				}
+			});
+		}
+
+		function checkMWShttps2State() {
+			var	kurl	= "https://127.0.0.1:"+ 8444 + "/version";
+			$.ajax({
+				type: "GET",
+				url: kurl,
+				async: true,
+				timeout: 3000,
+				success: function(data,status,xhr){
+					skurl= "https://127.0.0.1:"+ 8444 + "/kvs/geocode_iso_country_code/";
+					checkState();
+				},
+				error: function(xhr,status,err){
+					checkMWShttpState();
+				}
+			});
+		}
+
+		function checkMWShttpState() {
+			var	kurl	= "http://127.0.0.1:"+ 8008 + "/version";
+			$.ajax({
+				type: "GET",
+				url: kurl,
+				async: true,
+				timeout: 3000,
+				success: function(data,status,xhr){
+					skurl= "http://127.0.0.1:"+ 8008 + "/kvs/geocode_iso_country_code/";
+					checkState();
+				},
+				error: function(xhr,status,err){
+					checkMWShttp2State();
+				}
+			});
+		}
+
+		function checkMWShttp2State() {
+			var	kurl	= "http://127.0.0.1:"+ 8009 + "/version";
+			$.ajax({
+				type: "GET",
+				url: kurl,
+				async: true,
+				timeout: 3000,
+				success: function(data,status,xhr){
+					skurl= "http://127.0.0.1:"+ 8009 + "/kvs/geocode_iso_country_code/";
+					checkState();
+				},
+				error: function(xhr,status,err){
+					setTimeout("checkMWShttpsState()",5000);
+				}
+			});
+		}
+
+		checkStart();
+
+    </script>
+</body>
+
+</html>

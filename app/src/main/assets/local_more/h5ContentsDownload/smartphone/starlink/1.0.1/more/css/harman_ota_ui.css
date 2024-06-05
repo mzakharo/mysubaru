@@ -1,0 +1,382 @@
+/* ----- アラビア語対応（RTL有効化） ----- */
+.rtl,
+.rtl .ui-btn-text,
+.rtl .ui-btn-text div {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+/* ----- アラビア語対応（RTL有効化、右寄せ） ----- */
+.rtl-align-right,
+.rtl-align-right .ui-btn-text,
+.rtl-align-right .ui-btn-text div {
+    direction: rtl;
+    unicode-bidi: embed;
+    text-align: right;
+}
+
+.ltr-align-right,
+.ltr-align-right .ui-btn-text,
+.ltr-align-right .ui-btn-text div {
+    direction: ltr;
+    unicode-bidi: embed;
+    text-align: right;
+}
+
+/* ----- アラビア語対応（RTLキャンセル）----- */
+.rtl-cancel{
+    unicode-bidi: embed !important;
+    direction: ltr !important;
+}
+
+/* ----- トグルボタン ----->> */ 
+input[type="checkbox"].harman-ota-toggle-button {
+    appearance: none;
+    position: relative;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    left:35px;
+    margin: 10px;
+    width: 55px;
+    height: 30px;
+    border: 1px solid #BBBBBB;
+    border-radius: 50px;
+    background-color: #eee;
+    pointer-events: none;
+}
+
+input[type="checkbox"].harman-ota-toggle-button:checked {
+    
+    background-color: #0379FF;
+    border: 0px solid rgba(0,0,0,0.0);
+}
+
+input[type="checkbox"].harman-ota-toggle-button + label {
+    position: relative;
+    display: inline-block;
+    top: -12px;
+    left: -29px;
+    width: 26px;
+    height: 26px;
+    border: 0px solid rgba(0,0,0,0.0);
+    border-radius: 50%;
+    background-color: #eee;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    transition: left .2s ease, background-color .2s ease;
+}
+
+input[type="checkbox"].harman-ota-toggle-button:checked + label {
+    position: relative;
+    display: inline-block;
+    top: -12px;
+    left: -2px;
+    width: 26px;
+    height: 26px;
+    border: 0px solid rgba(0,0,0,0.0);
+    border-radius: 50%;
+    background-color: #eee;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+input[type="checkbox"].harman-ota-toggle-button:focus {
+    outline: none;
+}
+/* <<----- トグルボタン ----- */ 
+
+/* ----- 設定画面リスト ----->> */ 
+ul.harman-ota-setting-list li {
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -o-box !important;
+    display: -ms-box !important;
+    display: box !important;
+    -webkit-box-align: center !important;
+    -moz-box-align: center !important;
+    -o-box-align: center !important;
+    -ms-box-align: center !important;
+    box-align: center !important;
+    height: 70px;
+    line-height:50px;
+}
+
+ul.harman-ota-setting-list li:active {
+    background-color:#ddd !important;
+}
+
+div.harman-ota-setting-list-layout {
+    position: relative !important;
+    width : 100% !important;
+    height: 100% !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-label {
+    margin-right: 100px !important;
+    position: relative !important;
+    height: 100% !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-label.harman-ota-hide-toggle-button {
+    margin-right: 0px !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-label span.harman-ota-setting-list-label-text{
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    -webkit-transform: translateY(-50%) !important;
+    -o-transform: translateY(-50%) !important;
+    width: 100% !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-toggle-button-layout {
+    display: block !important;
+    float: right !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-toggle-button-layout div.harman-ota-setting-list-toggle-button-base {
+    float: right !important;
+}
+
+ul.harman-ota-setting-list li div.harman-ota-setting-list-toggle-button-layout div.harman-ota-setting-list-toggle-button-clear-float {
+    clear: both !important;
+}
+
+.harman-ota-hide-toggle-button {
+    display: table;
+    height: 100%;
+}
+
+.harman-ota-setting-list-label-text {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+/* <<----- 設定画面リスト ----- */ 
+
+/* ----- 更新データリスト ----->> */
+ul.harman-ota-upd-data-list {
+    /* 全てダウンロードボタンの高さ分、下端マージンを確保する */
+    margin-bottom: 50px !important;
+}
+
+ul.harman-ota-upd-data-list li img.harman-ota-upd-list_icon {
+    height: 100px !important;
+    top: 0% !important;
+    /* margin-top: -20px !important; */
+    width: 4% !important;
+}
+
+ul.harman-ota-upd-region-list li img.harman-ota-upd-list_icon {
+    height: 100px !important;
+    max-height: 90px;
+    /* top: 0% !important; */
+    /* margin-top: 0% !important; */
+    width: 4% !important;
+}
+  
+ul.harman-ota-upd-data-list li img.harman-ota-upd-list_icon_right,
+ul.harman-ota-upd-region-list li img.harman-ota-upd-list_icon_right {
+    position: absolute !important;
+    top: 25%;
+    right: 15px;
+    height: 50%;
+}
+
+ul.harman-ota-upd-data-list li h2,
+ul.harman-ota-upd-data-list li p{
+    margin-left : -75px;
+    padding-right : 5px; /* 文字の右端が切れる事象対処 */
+    overflow: visible; /* 折り返し */
+	white-space: normal; /* 折り返し */
+}
+
+ul.harman-ota-upd-region-list li h2,
+ul.harman-ota-upd-region-list li p{
+    margin-left : -20px;
+    margin-right : 60px;
+    padding-right : 5px; /* 文字の右端が切れる事象対処 */
+    overflow: visible; /* 折り返し */
+	white-space: normal; /* 折り返し */
+}
+
+ul.harman-ota-upd-data-list li h2,
+ul.harman-ota-upd-region-list li h2{
+    font-size: 90%;
+}
+
+/* <<----- 更新データリスト ----- */ 
+
+/* ----- 画面下端配置ボタン ----->> */ 
+div.harman-ota-bottom-button {
+    width: 100%;
+    height: 50px;
+    background-color: #0077FF;
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 99;
+}
+
+div.harman-ota-bottom-button[enabled="false"] {
+    background-color: #B3D7FF !important;
+    pointer-events: none !important;
+}
+
+div.harman-ota-bottom-button p {
+    color: #FFFFFF;
+    line-height: 100%;
+    text-align: center;
+    position: relative;
+    top:50%;
+    margin-top:-0.5em;
+    font-size: 130%;
+}
+/* <<----- 画面下端配置ボタン ----- */ 
+
+/* ----- プログレスサークル ----->> */
+div.harman-ota-progress-circle {
+    position: absolute !important;
+    top : 50%;
+    right : 15px;
+    height : 100%;
+    margin-top : -21px;
+}
+
+div.harman-ota-progress-circle svg.progress-circle {
+    height: 3em;
+}
+
+div.harman-ota-progress-circle svg.progress-circle circle.bg {
+    stroke: #e5e5e5;
+}
+
+div.harman-ota-progress-circle svg.progress-circle circle.center,
+div.harman-ota-progress-circle svg.progress-circle rect.center {
+        fill: #999;
+}
+
+div.harman-ota-progress-circle svg.progress-circle circle.progress {
+    stroke: #999;
+    transition: stroke-dashoffset .5s ease-out;
+}
+
+/*  CSS のプロパティ：animationの定義  */
+@keyframes harman-ota-progress-circle-flash-on{
+    0%   { opacity: 0.5 ; }
+    50%  { opacity: 1 ; }
+    100% { opacity: 0.5 ; } 
+}
+  
+@keyframes harman-ota-progress-circle-flash-off{
+    0%   { opacity: 0.5 ; }
+    50%  { opacity: 1 ; }
+    100% { opacity: 0.5 ; } 
+}
+    
+/* <<----- プログレスサークル ----- */ 
+
+/** タイトルエリア非表示 **/
+.ui-dialog-titlebar {
+    display: none;
+}
+
+/** オーバーレイ **/
+.ui-widget-overlay {
+    z-index: 999 ;
+    display: block ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    width: 100% ;
+    height: 120% ;
+    background-color: rgba( 0,0,0, 0.75 ) ;
+    opacity: inherit;
+}
+
+.ui-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    outline: 0;
+}
+
+/** メッセージエリアの背景色を指定 **/
+.ui-dialog .ui-dialog-content {
+    background-color: white;
+    border-top-left-radius: .5em;
+    border-top-right-radius:.5em;
+}
+
+/** メッセージとボタンの区切り線を目立たなくする **/
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: left;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    margin-top: 0;
+    padding: .3em 1em .5em .4em;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
+/** モーダルダイアログ用クラス **/
+.harman-ota-dialog-mordal {
+    overflow-y: scroll;
+}
+
+/** ボタンなしモーダル表示時の見た目を変更 **/
+.harman-ota-dialog-message-area { 
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
+/* ----- モーダルウィンドウ  ----->>  */
+.mobile-ota-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6)
+}
+
+.mobile-ota-overlay-on{
+    visibility: visible;
+    opacity: 1;
+    z-index: 900;
+    overflow-y:hidden;
+    
+}
+.mobile-ota-overlay-off{
+    visibility: hidden;
+    z-index: 0;
+}
+
+/* ----- モーダルウィンドウ  ----->>  */
+/* <<----- 画像  -----  */
+.harman-ota-image{
+    width:100%;
+    padding: 20px 0px 20px 0px;
+}
+
+ul.harman-ota-upd-data-list li.language_right img.harman-ota-upd-list_icon_right,
+ul.harman-ota-upd-data-list li.language_right .harman-ota-progress-circle{
+    left: 15px;
+    right: auto;
+}
+li.language_right .ui-li-thumb{
+    right: 1px;
+    left: auto;
+    margin-right: 0;
+}
+li.language_right.ui-li-static.ui-li-has-thumb{
+    padding-right: 100px;
+    padding-left: 15px;
+}
+ul.harman-ota-upd-data-list li.language_right h2,
+ul.harman-ota-upd-data-list li.language_right p{
+    margin-right: -75px;
+    margin-left: 5px;
+}
