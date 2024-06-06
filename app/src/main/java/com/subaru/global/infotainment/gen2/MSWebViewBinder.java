@@ -89,7 +89,8 @@ public class MSWebViewBinder implements MCWebViewNativeApi.WebViewInjectorDelega
                     Method dump skipped, instructions count: 415
                     To view this dump change 'Code comments level' option to 'DEBUG'
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.subaru.global.infotainment.gen2.MSWebViewBinder.AnonymousClass2.shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String):boolean");
+                return false;
+                //throw new UnsupportedOperationException("Method not decompiled: com.subaru.global.infotainment.gen2.MSWebViewBinder.AnonymousClass2.shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String):boolean");
             }
 
             @Override // android.webkit.WebViewClient

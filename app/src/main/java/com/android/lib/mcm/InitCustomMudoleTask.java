@@ -46,6 +46,7 @@ public class InitCustomMudoleTask extends AsyncTask<Integer, Integer, Integer> {
         To view partially-correct add '--show-bad-code' argument
     */
     public java.lang.Integer doInBackground(java.lang.Integer... r13) {
+        return 0;
         /*
             r12 = this;
             com.android.lib.mcm.InitCustomModuleHelper$State r13 = com.android.lib.mcm.InitCustomModuleHelper.getState()
@@ -145,6 +146,6 @@ public class InitCustomMudoleTask extends AsyncTask<Integer, Integer, Integer> {
             java.lang.Integer r13 = java.lang.Integer.valueOf(r0)
             return r13
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.android.lib.mcm.InitCustomMudoleTask.doInBackground(java.lang.Integer[]):java.lang.Integer");
+       // throw new UnsupportedOperationException("Method not decompiled: com.android.lib.mcm.InitCustomMudoleTask.doInBackground(java.lang.Integer[]):java.lang.Integer");
     }
 }

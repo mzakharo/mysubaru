@@ -211,7 +211,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         if (Build.VERSION.SDK_INT <= 18) {
             arrayList.add("android.permission.WRITE_EXTERNAL_STORAGE");
         } else {
-            arrayList.add("android.permission.READ_EXTERNAL_STORAGE");
+           // arrayList.add("android.permission.READ_EXTERNAL_STORAGE");
         }
         arrayList.add("android.permission.READ_CONTACTS");
         arrayList.add("android.permission.READ_PHONE_STATE");
@@ -483,6 +483,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         }
         for (String str : sNeedsAppPermissions) {
             if (checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                Log.e("ContextWrapper Permission Err", str);
                 arrayList.add(str);
             }
         }

@@ -20,6 +20,19 @@ android {
             useSupportLibrary true
         }
     }
+    sourceSets {
+        //noinspection GroovyAssignabilityCheck
+        main {
+            jni {
+                srcDirs = []
+            }
+
+            jniLibs {
+                srcDir 'src/main/lib'
+            }
+        }
+    }
+
 
     buildTypes {
         release {

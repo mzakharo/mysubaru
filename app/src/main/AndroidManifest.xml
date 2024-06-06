@@ -17,30 +17,40 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="com.android.vending.BILLING"/>
     <uses-feature android:name="android.hardware.usb.accessory"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_PERMISSION"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <application
-        android:name="com.subaru.global.infotainment.gen2.StarLinkApplication"
-        android:icon="@drawable/app_icon"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="31">
+        android:label="@string/app_name"
+        android:icon="@drawable/app_icon"
+        android:name="com.subaru.global.infotainment.gen2.StarLinkApplication"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:extractNativeLibs="true"
+        android:usesCleartextTraffic="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory">
         <activity
-            android:name="com.subaru.global.infotainment.gen2.MainActivity"
             android:exported="true"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+            android:theme="@style/SplashTheme"
+            android:label="@string/app_name"
+            android:name="com.subaru.global.infotainment.gen2.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -50,6 +60,106 @@
             android:name="com.subaru.global.infotainment.gen2.extend.webpopup.PopupActivity"
             android:launchMode="singleTask"
             android:screenOrientation="behind"/>
+
+        <activity
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.subaru.global.infotainment.gen2.harman.error.HarmanOTAAlertDialogActivity"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="standard"/>
+        <meta-data
+            android:name="rsa_key"
+            android:value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmt0r6y95B3F5+mRvj0BI2wOewNJZo0ybb8JFukbZ8QsmZCeIAyRwdesZ7xT/VULFqDt2vsmi6jnAYE3vo0nUInt/IMqH8M/QeVf+JZh/sWci1dRqGhSq7mn+QRm0TSoMUQEuhjHjkJYpNpAvXS1FnyrSBhlk6Cd9w1He53Ob53KJqGIKht6E0oFTOVzwXbl1rFmJyU+UUNApynrWROSY2WEe3rxsRmkkEi6f83PhL1GYDJ46QT4q/ATyAkFB+VBIuXViCDYyRKN1v0bzIqmtearsHve+RjjSSBT6dMzA8pk4Uh0GrT8BvncUSBQNLOFgV61K+ybYMmfrCu49HK3oxQIDAQAB"/>
+        <service
+            android:name="com.uievolution.microserver.MicroServerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":msservice"
+            android:foregroundServiceType="location"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+        <service
+            android:name="com.android.lib.mcm.PurchaseNoticePollingService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":msservice"/>
+        <service
+            android:name="com.android.lib.mcm.kvswrapper.KvsWrapperService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":msservice"/>
+        <service
+            android:name="com.android.lib.mcm.send_location.SendLocationService"
+            android:enabled="true"
+            android:exported="false"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <meta-data
+            android:name="layout_id"
+            android:value="0x7f030002"
+            android:resource="@layout/googleplaymain"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"/>
+        <activity
+            android:exported="true"
+            android:name="com.harman.connectsdk.UsbInsertActivity"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter"/>
+        </activity>
+        <receiver
+            android:exported="true"
+            android:name="com.harman.connectsdk.bt.BTConnectionReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="com.honda.displayaudio.system.action.HFT_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.harman.connectsdk.ConnectionService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service
+            android:name="solutions.eve.evelib.geofence.GeofenceTransitionsIntentService"
+            android:exported="true"/>
+        <service
+            android:name="solutions.eve.evelib.geofence.ValidateAutomationIntentService"
+            android:exported="true"/>
+        <receiver android:name="solutions.eve.evelib.geofence.ProvidersChangedBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.location.PROVIDERS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="solutions.eve.evelib.helper.RecordPermissionIntentService"/>
+        <receiver
+            android:exported="true"
+            android:name="solutions.eve.evelib.geofence.EVEBootUpReceiver"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="solutions.eve.evelib.geofence.SetupFenceIntentService"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
